@@ -58,7 +58,9 @@ CREATE TABLE planes  (
     tipo VARCHAR(255) NOT NULL,
     nombre VARCHAR(255) NOT NULL,
     PRIMARY KEY (id_plan)
+    
     );
+
 
  CREATE TABLE ejercicios  (
     id_ejercicio INT NOT NULL AUTO_INCREMENT,

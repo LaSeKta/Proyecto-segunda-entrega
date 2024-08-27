@@ -71,5 +71,10 @@ CREATE TABLE planes  (
 
 
 CREATE TABLE sesiones (
-    idsesion INT  
-)
+    idsesion INT NOT NULL AUTO_INCREMENT,
+    fecha DATE NOT NULL,
+    asistencia BOOLEAN NOT NULL,
+    notas VARCHAR(255) NOT NULL,
+);
+
+

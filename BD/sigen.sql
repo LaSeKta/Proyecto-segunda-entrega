@@ -78,3 +78,88 @@ CREATE TABLE sesiones (
 );
 
 
+CREATE TABLE horarios  ( 
+    id_horario INT NOT NULL AUTO_INCREMENT,
+    dia VARCHAR(10) NOT NULL,
+    hora_inicio TIME NOT NULL,
+    hora_fin TIME NOT NULL,
+    PRIMARY KEY (id_horario)
+    );
+
+--================================================================================
+
+
+CREATE TABLE cliente_estado (
+    id_cliente INT NOT NULL,
+    id_estado INT NOT NULL,
+    PRIMARY KEY (idcliente, idestado),
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
+    FOREIGN KEY (id_estado) REFERENCES planes(id_plan) 
+);
+
+CREATE TABLE cliente_evaluaciones (
+    id_evaluacion INT NOT NULL,
+    id_cliente INT NOT NULL, 
+    PRIMARY KEY (id_evaluacion, id_cliente), 
+    FOREIGN KEY (id_evaluacion) REFERENCES evaluacion(id_evaluacion),
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+);
+
+CREATE TABLE cliente_deporte (
+    id_deporte INT NOT NULL,
+    id_cliente INT NOT NULL,
+    PRIMARY KEY (id_deporte, id_cliente),
+    FOREIGN KEY (id_deporte) REFERENCES planes(id_plan),
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+);
+
+CREATE TABLE cliente_sesion (
+    id_sesion INT NOT NULL,
+    id_cliente INT NOT NULL,
+    PRIMARY KEY (id_sesion, id_cliente),
+    FOREIGN KEY (id_sesion) REFERENCES sesiones(idsesion),
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+);
+
+CREATE TABLE entrenador_sesion (
+    id_entrenador INT NOT NULL,
+    id_sesion INT NOT NULL,
+    PRIMARY KEY (id_entrenador, id_sesion),
+    FOREIGN KEY (id_entrenador) REFERENCES planes(id_plan),
+    FOREIGN KEY (id_sesion) REFERENCES sesiones(idsesion)
+);
+
+CREATE TABLE entrenador_horario (
+    id_entrenador INT NOT NULL,
+    id_horario INT NOT NULL,
+    PRIMARY KEY (id_entrenador, id_horario),
+    FOREIGN KEY (id_entrenador) REFERENCES planes(id_plan),
+    FOREIGN KEY (id_horario) REFERENCES horarios(id_horario)
+);
+
+CREATE TABLE sucursal_horario (
+    id_sucursal INT NOT NULL,
+    id_horario INT NOT NULL,
+    PRIMARY KEY (id_sucursal, id_horario),  
+    FOREIGN KEY (id_sucursal) REFERENCES sucursal(id_sucursal),
+    FOREIGN KEY (id_horario) REFERENCES horarios(id_horario)
+);
+
+CREATE TABLE planes_ejercicios (
+    id_plan INT NOT NULL,
+    id_ejercicio INT NOT NULL,
+    PRIMARY KEY (id_plan, id_ejercicio),
+    FOREIGN KEY (id_plan) REFERENCES planes(id_plan),
+    FOREIGN KEY (id_ejercicio) REFERENCES ejercicios(id_ejercicio)
+);
+
+CREATE TABLE cliente_pago (
+    id_pago INT NOT NULL,
+    id_cliente INT NOT NULL,
+    PRIMARY KEY (id_pago, id_cliente),
+    FOREIGN KEY (id_pago) REFERENCES pagos(id_pago),
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+);
+
+
+

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/estilos_p1.css">
+    <link rel="stylesheet" href="assets/css/media_p1.css">
+    <link rel="icon" href="assets/img/Logos/Logo_home.png">
+    <title>S.I.G.EN</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilos_p1.css">
+</head>
+
+<body>
+    <div class="contA">
+        <nav>
+            <div class="imagen_logo"> 
+                <img src="assets/img/Logos/Logo_home.png" width="120em" height="120em" alt="imagen" class="container-logo">
+            </div>
+        
+            <div class="div-nav-1">
+                <h1>S.I.G.EN</h1>
+            </div>
+            <div class="div-nav-2">
+                <ul>
+                    <li class="op-menu"><a id="clic1" href="#home" class="activo">Home</a></li>
+                    <li class="op-menu"><a href="#Horarios">Calificación y Evolución</a></li>
+                    <li class="op-menu"><a href="#Gimnasios">Gestión de Planes</a></li>
+                    <li class="op-menu"><a href="#Sobre nosotros">Consultar Evolución</a></li>
+                </ul>
+
+                <div class="menu-icon" id="menuIcon">☰
+                    <div class="menu-hidden" id="menuHidden">
+                        <li class="oc-menu"><a href="#home">Home</a></li>
+                        <li class="oc-menu"><a href="#Gimnasios">Gestión de Planes</a></li>
+                        <li class="oc-menu"><a href="#Sobre nosotros">Consultar Evolución</a></li>
+                        <li class="oc-menu"><a href="#Horarios">Calificación y Evolución</a></li>
+                    </div>
+        </nav>
+        <header id="home">
+
+            <article class="izq-header" id="subir">
+                <div class="">
+                    <div id="EfectoCarrusel" class="carousel slide">
+
+                        <!-- Indicadores-->
+                        <ul class="carousel-indicators">
+                            <li class="item1 active"></li>
+                            <li class="item2"></li>
+                            <li class="item3"></li>
+                        </ul>
+
+                        <!-- Desplazamineto de imágenes -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a href="#Horarios">
+                                <img src="assets/img/img1.png" alt="Interior design 1">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="#Gimnasios">
+                                <img src="assets/img/img2.png" alt="Interior design 2">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="#Sobre nosotros">
+                                <img src="assets/img/img3.png" alt="Interior design 3">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Controles de navegación como flechas -->
+                        <a class="carousel-control-prev" href="#EfectoCarrusel">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#EfectoCarrusel">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div>
+
+            </article>
+            <article class="der-header">
+
+                <div class="texto">
+                    <h2><br>S.I.G.EN</h2>
+                    <p class="parrafo1"> <br> El entrenador crea y modifica planes de entrenamiento personalizados, 
+                        registra y califica la evolución de los clientes, y consulta su progreso. Utiliza un módulo 
+                        para gestionar planes, una sección para calificación y evolución, y un dashboard con estadísticas 
+                        de desempeño de sus clientes.</p>
+                    
+                </div>
+                
+            </article>
+        </header>
+
+
+        <section id="Horarios">
+            <h2 class="tituloo" style="color: var(--color3);">Calificación y Evolución</h2>
+            <div class="evolucion-container">
+                <!-- Formulario para registrar la evolución del cliente a la izquierda -->
+                <div class="evolucion-form-container">
+                    <form id="evolucionForm" class="evolucion-form">
+                        <div class="form-group">
+                            <label for="clientName">Nombre del Cliente:</label>
+                            <input type="text" id="clientName" name="clientName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientProgress">Progreso (%):</label>
+                            <input type="number" id="clientProgress" name="clientProgress" min="0" max="100" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clientRating">Calificación del Desempeño:</label>
+                            <select id="clientRating" name="clientRating">
+                                <option value="Excelente">Excelente</option>
+                                <option value="Bueno">Bueno</option>
+                                <option value="Regular">Regular</option>
+                                <option value="Deficiente">Deficiente</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Registrar Evolución</button>
+                        </div>
+                    </form>
+                </div>
+        
+                <!-- Tabla de evolución de clientes a la derecha -->
+                <div class="evolucion-list-container">
+                    <table class="evolucion-table">
+                        <thead>
+                            <tr>
+                                <th class="tablajeje" colspan="4">Evolución de Clientes</th>
+                            </tr>
+                            <tr class="tablajeje">
+                                <th>Nombre del Cliente</th>
+                                <th>Progreso (%)</th>
+                                <th>Calificación</th>
+                                <th>Alertas</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clientEvolutions">
+                            <!-- Las evoluciones de clientes agregadas dinámicamente se mostrarán aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Obtener referencias a los elementos del DOM
+                const evolucionForm = document.getElementById('evolucionForm');
+                const clientEvolutionsTable = document.getElementById('clientEvolutions');
+            
+                // Escuchar el evento de envío del formulario
+                evolucionForm.addEventListener('submit', function (event) {
+                    event.preventDefault(); // Evitar el envío del formulario
+            
+                    // Obtener los valores de los campos del formulario
+                    const clientName = document.getElementById('clientName').value;
+                    const clientProgress = parseInt(document.getElementById('clientProgress').value);
+                    const clientRating = document.getElementById('clientRating').value;
+            
+                    // Crear una nueva fila para la tabla de evolución
+                    const newRow = document.createElement('tr');
+            
+                    // Crear celdas para los datos del cliente
+                    const nameCell = document.createElement('td');
+                    nameCell.textContent = clientName;
+                    newRow.appendChild(nameCell);
+            
+                    const progressCell = document.createElement('td');
+                    progressCell.textContent = `${clientProgress}%`;
+                    newRow.appendChild(progressCell);
+            
+                    const ratingCell = document.createElement('td');
+                    ratingCell.textContent = clientRating;
+                    newRow.appendChild(ratingCell);
+            
+                    // Crear celda de alerta si el progreso es menor que el 50%
+                    const alertCell = document.createElement('td');
+                    if (clientProgress < 50) {
+                        alertCell.textContent = '¡Alerta: Bajo progreso!';
+                        alertCell.style.color = 'red';
+                        alertCell.style.fontWeight = 'bold';
+                    } else {
+                        alertCell.textContent = 'Buen Progreso';
+                    }
+                    newRow.appendChild(alertCell);
+            
+                    // Agregar la nueva fila a la tabla
+                    clientEvolutionsTable.appendChild(newRow);
+            
+                    // Limpiar los campos del formulario después de agregar la fila
+                    evolucionForm.reset();
+                });
+            });
+            </script>
+        
+
+        <section id="Gimnasios">
+            <h2 style="color: var(--color3);" >Gestión de Planes de Entrenamiento</h2>
+            <div id="planes-container">
+                <!-- Lista de planes de entrenamiento existentes -->
+                <div id="lista-planes">
+                    <h3>Planes Disponibles</h3>
+                    <ul id="planes-list">
+                        <!-- Aquí se llenarán los planes existentes dinámicamente -->
+                    </ul>
+                </div>
+                
+                <!-- Formulario para agregar o modificar planes de entrenamiento -->
+                <div id="formulario-plan">
+                    <h3>Crear o Modificar Plan de Entrenamiento</h3>
+                    <form id="plan-form">
+                        <label for="nombre-plan">Nombre del Plan:</label>
+                        <input type="text" id="nombre-plan" name="nombre-plan" required>
+        
+                        <label for="objetivo-plan">Objetivo del Plan:</label>
+                        <input type="text" id="objetivo-plan" name="objetivo-plan" required>
+        
+                        <button type="submit" id="agregar-plan-btn">Guardar Plan</button>
+                        <button type="button" id="eliminar-plan-btn">Eliminar Plan</button>
+                        <!-- Botón para abrir el modal de asignación -->
+                        <button type="button" id="abrir-modal-asignar-btn">Asignar Plan</button>
+                    </form>
+                </div>
+            </div>
+        
+            <!-- Modal para asignar planes a clientes -->
+            <div id="modal-asignar-plan" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal" id="cerrar-modal-asignar-btn">&times;</span>
+                    <h3>Asignar Plan a Cliente</h3>
+                    <form id="asignar-plan-form">
+                        <label for="cliente-select">Seleccionar Cliente:</label>
+                        <select id="cliente-select" name="cliente-select" required>
+                            <!-- Opciones de clientes se llenarán dinámicamente -->
+                        </select>
+        
+                        <label for="plan-select">Seleccionar Plan:</label>
+                        <select id="plan-select" name="plan-select" required>
+                            <!-- Opciones de planes se llenarán dinámicamente -->
+                        </select>
+        
+                        <button type="submit" id="asignar-plan-btn">Asignar Plan</button>
+                    </form>
+        
+                    <!-- Contenedor con desplazamiento para la tabla de asignaciones -->
+                    <h3 style="color: var(--color3);" >Asignaciones de Planes a Clientes</h3>
+                    <div class="tabla-asignaciones-container">
+                        <table id="tabla-asignaciones">
+                            <thead>
+                                <tr>
+                                    <th>Cliente</th>
+                                    <th>Plan Asignado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Aquí se llenarán las filas de asignaciones dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <script>
+       // Ejemplo de array de planes de entrenamiento
+let planes = [
+    { id: 1, nombre: 'Plan de Fuerza', objetivo: 'Aumentar fuerza muscular' }
+];
+
+// Ejemplo de array de clientes
+let clientes = [
+    { id: 1, nombre: 'Juan Pérez' },
+    { id: 2, nombre: 'María Gómez' }
+];
+
+// Ejemplo de array de asignaciones de planes a clientes
+let asignaciones = [
+    { clienteId: 1, planId: 1 }
+];
+
+// Cargar planes, clientes y asignaciones al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    cargarPlanes(); // Cargar siempre la lista de planes disponibles
+    cargarClientes(); // Cargar la lista de clientes disponibles
+    cargarOpcionesPlanes(); // Cargar opciones de planes en el formulario de asignación
+    cargarAsignacionesTabla(); // Cargar la lista de asignaciones en la tabla
+    ocultarModales(); // Asegurar que todos los modales estén ocultos al cargar la página
+});
+
+// Función para ocultar todos los modales al cargar la página
+function ocultarModales() {
+    document.getElementById('modal-asignar-plan').style.display = 'none';
+}
+
+// Función para cargar los planes en la lista
+function cargarPlanes() {
+    const listaPlanes = document.getElementById('planes-list');
+    listaPlanes.innerHTML = ''; // Limpiar la lista antes de agregar los planes
+
+    planes.forEach(plan => {
+        const li = document.createElement('li');
+        li.textContent = `${plan.nombre} - ${plan.objetivo}`;
+        li.dataset.id = plan.id;
+        li.addEventListener('click', () => cargarFormularioPlan(plan));
+        listaPlanes.appendChild(li);
+    });
+
+    // Actualizar las opciones del select de planes en el modal de asignación
+    cargarOpcionesPlanes();
+}
+
+// Función para cargar el formulario con la información de un plan existente
+function cargarFormularioPlan(plan) {
+    document.getElementById('nombre-plan').value = plan.nombre;
+    document.getElementById('objetivo-plan').value = plan.objetivo;
+    document.getElementById('agregar-plan-btn').dataset.id = plan.id; // Asignar el ID al botón de agregar
+}
+
+// Función para cargar las opciones de planes en el select de asignación
+function cargarOpcionesPlanes() {
+    const selectPlanes = document.getElementById('plan-select');
+    selectPlanes.innerHTML = ''; // Limpiar opciones antes de agregar nuevas
+
+    planes.forEach(plan => {
+        const option = document.createElement('option');
+        option.value = plan.id;
+        option.textContent = plan.nombre;
+        selectPlanes.appendChild(option);
+    });
+}
+
+// Función para cargar los clientes en el select de asignación
+function cargarClientes() {
+    const selectClientes = document.getElementById('cliente-select');
+    selectClientes.innerHTML = ''; // Limpiar opciones antes de agregar nuevas
+
+    clientes.forEach(cliente => {
+        const option = document.createElement('option');
+        option.value = cliente.id;
+        option.textContent = cliente.nombre;
+        selectClientes.appendChild(option);
+    });
+}
+
+// Evento de agregar o modificar un plan de entrenamiento
+document.getElementById('plan-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const id = document.getElementById('agregar-plan-btn').dataset.id;
+    const nombre = document.getElementById('nombre-plan').value;
+    const objetivo = document.getElementById('objetivo-plan').value;
+
+    if (id) {
+        // Modificar plan existente
+        const plan = planes.find(p => p.id == id);
+        plan.nombre = nombre;
+        plan.objetivo = objetivo;
+    } else {
+        // Crear nuevo plan
+        const nuevoPlan = {
+            id: Date.now(), // Generar un ID único usando la marca de tiempo
+            nombre,
+            objetivo
+        };
+        planes.push(nuevoPlan); // Agregar el nuevo plan al array
+    }
+
+    cargarPlanes(); // Recargar la lista de planes y actualizar select de asignación
+    e.target.reset(); // Resetear el formulario
+    delete document.getElementById('agregar-plan-btn').dataset.id; // Limpiar el ID asignado al botón
+});
+
+// Evento de eliminar un plan de entrenamiento
+document.getElementById('eliminar-plan-btn').addEventListener('click', () => {
+    const id = document.getElementById('agregar-plan-btn').dataset.id;
+    if (id) {
+        planes = planes.filter(p => p.id != id); // Filtrar el plan eliminado
+        cargarPlanes(); // Recargar la lista de planes y actualizar select de asignación
+        document.getElementById('plan-form').reset(); // Resetear el formulario
+        delete document.getElementById('agregar-plan-btn').dataset.id; // Limpiar el ID asignado al botón
+    }
+});
+
+// Evento para asignar un plan a un cliente
+document.getElementById('asignar-plan-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const clienteId = parseInt(document.getElementById('cliente-select').value);
+    const planId = parseInt(document.getElementById('plan-select').value);
+
+    // Asignar el plan al cliente
+    asignaciones.push({ clienteId, planId });
+    
+    cargarAsignacionesTabla(); // Recargar la tabla de asignaciones
+    e.target.reset(); // Resetear el formulario
+});
+
+// Función para cargar las asignaciones en la tabla
+function cargarAsignacionesTabla() {
+    const tablaAsignacionesBody = document.querySelector('#tabla-asignaciones tbody');
+    tablaAsignacionesBody.innerHTML = ''; // Limpiar la tabla antes de agregar las asignaciones
+
+    asignaciones.forEach(asignacion => {
+        const cliente = clientes.find(c => c.id === asignacion.clienteId);
+        const plan = planes.find(p => p.id === asignacion.planId);
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${cliente.nombre}</td><td>${plan.nombre}</td>`;
+        tablaAsignacionesBody.appendChild(tr);
+    });
+}
+
+// Controlar la apertura y cierre del modal de asignación de planes
+document.getElementById('abrir-modal-asignar-btn').addEventListener('click', () => {
+    document.getElementById('modal-asignar-plan').style.display = 'block';
+    cargarOpcionesPlanes(); // Cargar o actualizar las opciones de planes cada vez que se abre el modal
+    cargarAsignacionesTabla(); // Cargar o actualizar la tabla de asignaciones cada vez que se abre el modal
+});
+
+document.getElementById('cerrar-modal-asignar-btn').addEventListener('click', () => {
+    document.getElementById('modal-asignar-plan').style.display = 'none';
+});
+
+// Cerrar el modal al hacer clic fuera del contenido del modal
+window.addEventListener('click', (event) => {
+    if (event.target === document.getElementById('modal-asignar-plan')) {
+        document.getElementById('modal-asignar-plan').style.display = 'none';
+    }
+});
+
+        </script>
+        
+        <section id="Sobre nosotros">
+            <h2 style="color: var(--color3);">Consultar Evolución de Deportistas</h2>
+            <div id="evolucion-container">
+                <!-- Tabla de Progreso de Deportistas -->
+                <table id="tabla-evolucion">
+                    <thead>
+                        <tr>
+                            <th>Deportista</th>
+                            <th>Progreso</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Las filas de esta tabla se generarán dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    
+        <!-- Modal para mostrar el dashboard del deportista -->
+        <div id="modal-dashboard" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 style="color: var(--color3);">Dashboard de Desempeño</h2>
+                <!-- Dashboard con gráficos de desempeño -->
+                <div id="dashboard-content">
+                    <div class="chart-container">
+                        <h3 style="color: var(--color3);">Progreso General</h3>
+                        <canvas id="progresoGeneralChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3 style="color: var(--color3);">Resistencia</h3>
+                        <canvas id="resistenciaChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3 style="color: var(--color3);">Fuerza Muscular</h3>
+                        <canvas id="fuerzaMuscularChart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3 style="color: var(--color3);">Cumplimiento de Ejercicios</h3>
+                        <canvas id="cumplimientoEjerciciosChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+        // Datos de ejemplo de deportistas
+const deportistas = [
+    { nombre: 'Juan Pérez', progreso: '75%' },
+    { nombre: 'Ana Gómez', progreso: '60%' },
+    { nombre: 'Carlos Ruiz', progreso: '90%' }
+];
+
+// Función para llenar la tabla con los datos de los deportistas
+function llenarTablaEvolucion() {
+    const tabla = document.querySelector('#tabla-evolucion tbody');
+    tabla.innerHTML = ''; // Limpiar la tabla antes de llenarla
+
+    deportistas.forEach((deportista, index) => {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td>${deportista.nombre}</td>
+            <td>${deportista.progreso}</td>
+            <td><button onclick="abrirModal(${index})">Ver Dashboard</button></td>
+        `;
+        tabla.appendChild(fila);
+    });
+}
+
+// Función para abrir el modal y mostrar el dashboard
+function abrirModal(index) {
+    const modal = document.getElementById('modal-dashboard');
+    modal.style.display = 'flex'; // Mostrar el modal como flex para centrar
+
+    // Generar gráficos al abrir el modal
+    generarGraficos(deportistas[index]);
+}
+
+// Función para cerrar el modal
+function cerrarModal() {
+    const modal = document.getElementById('modal-dashboard');
+    modal.style.display = 'none'; // Ocultar el modal
+}
+
+// Agregar eventos de cierre al botón de cierre del modal
+document.querySelector('.close').onclick = cerrarModal;
+
+// Cargar la tabla al cargar la página
+window.onload = function() {
+    llenarTablaEvolucion(); // Llenar la tabla con los datos de los deportistas
+    cerrarModal(); // Asegurar que el modal esté oculto al cargar la página
+};
+
+// Cerrar el modal al hacer clic fuera de él
+window.onclick = function(event) {
+    const modal = document.getElementById('modal-dashboard');
+    if (event.target == modal) {
+        cerrarModal();
+    }
+};
+
+// Función para generar gráficos utilizando Chart.js
+function generarGraficos(deportista) {
+    // Eliminar gráficos anteriores si existen
+    Chart.helpers.each(Chart.instances, function(instance) {
+        instance.destroy();
+    });
+
+    const progresoGeneralCtx = document.getElementById('progresoGeneralChart').getContext('2d');
+    const resistenciaCtx = document.getElementById('resistenciaChart').getContext('2d');
+    const fuerzaMuscularCtx = document.getElementById('fuerzaMuscularChart').getContext('2d');
+    const cumplimientoEjerciciosCtx = document.getElementById('cumplimientoEjerciciosChart').getContext('2d');
+
+    new Chart(progresoGeneralCtx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Progreso', 'Restante'],
+            datasets: [{
+                data: [deportista.progreso.replace('%', ''), 100 - deportista.progreso.replace('%', '')],
+                backgroundColor: ['#FF6384', '#DDDDDD'],
+            }]
+        }
+    });
+
+    new Chart(resistenciaCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Resistencia'],
+            datasets: [{
+                label: 'Resistencia',
+                data: [75], // Ejemplo de datos
+                backgroundColor: '#36A2EB'
+            }]
+        }
+    });
+
+    new Chart(fuerzaMuscularCtx, {
+        type: 'line',
+        data: {
+            labels: ['Semana 1', 'Semana 2', 'Semana 3', 'Semana 4'],
+            datasets: [{
+                label: 'Fuerza Muscular',
+                data: [70, 72, 75, 80], // Ejemplo de datos
+                backgroundColor: '#FFCE56',
+                fill: false,
+                borderColor: '#FFCE56'
+            }]
+        }
+    });
+
+    new Chart(cumplimientoEjerciciosCtx, {
+        type: 'pie',
+        data: {
+            labels: ['Cumplido', 'No Cumplido'],
+            datasets: [{
+                data: [90, 10], // Ejemplo de datos
+                backgroundColor: ['#4BC0C0', '#FF6384']
+            }]
+        }
+    });
+}
+
+
+</script>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </div>
+
+
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/estilos_p1.css">
+    <link rel="stylesheet" href="assets/css/media_p1.css">
+    <link rel="icon" href="assets/img/Logos/Logo_home.png">
+    <title>S.I.G.EN</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilos_p1.css">
+</head>
+
+<body>
+    <div class="contA">
+        <nav>
+            <div class="imagen_logo"> 
+                <img src="assets/img/Logos/Logo_home.png" width="120em" height="120em" alt="imagen" class="container-logo">
+            </div>
+        
+            <div class="div-nav-1">
+                <h1>S.I.G.EN</h1>
+            </div>
+            <div class="div-nav-2">
+                <ul>
+                    <li class="op-menu"><a id="clic1" href="#home" class="activo">Home</a></li>
+                    <li class="op-menu"><a href="#Horarios">Gestión de Usuarios</a></li>
+                    <li class="op-menu"><a href="#Gimnasios">Gestión de Ejercicios</a></li>
+                    <li class="op-menu"><a href="#Sobre nosotros">Gestión de Deportes</a></li>
+                </ul>
+
+                <div class="menu-icon" id="menuIcon">☰
+                    <div class="menu-hidden" id="menuHidden">
+                        <li class="oc-menu"><a href="#home">Home</a></li>
+                        <li class="oc-menu"><a href="#Gimnasios">Gestión de Ejercicios</a></li>
+                        <li class="oc-menu"><a href="#Sobre nosotros">Gestión de Deportes</a></li>
+                        <li class="oc-menu"><a href="#Horarios">Gestión de Usuarios</a></li>
+                    </div>
+        </nav>
+        <header id="home">
+
+            <article class="izq-header" id="subir">
+                <div class="">
+                    <div id="EfectoCarrusel" class="carousel slide">
+
+                        <!-- Indicadores-->
+                        <ul class="carousel-indicators">
+                            <li class="item1 active"></li>
+                            <li class="item2"></li>
+                            <li class="item3"></li>
+                        </ul>
+
+                        <!-- Desplazamineto de imágenes -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a href="#Horarios">
+                                <img src="assets/img/img1.png" alt="Interior design 1">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="#Gimnasios">
+                                <img src="assets/img/img2.png" alt="Interior design 2">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="#Sobre nosotros">
+                                <img src="assets/img/img3.png" alt="Interior design 3">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Controles de navegación como flechas -->
+                        <a class="carousel-control-prev" href="#EfectoCarrusel">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#EfectoCarrusel">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div>
+
+            </article>
+            <article class="der-header">
+
+                <div class="texto">
+                    <h2><br>S.I.G.EN</h2>
+                    <p class="parrafo1"> <br> Usuario Avanzado gestiona elementos clave del sistema: <br>
+
+                        -Ingresar Usuarios Básicos: Añade nuevos clientes con sus datos personales y asigna planes iniciales. <br>
+                        -Gestionar Ejercicios: Crea, modifica o elimina ejercicios y <br>combos disponibles para entrenadores. <br>
+                        -Gestión de Deportes: Introduce y modifica deportes disponibles <br>a nivel nacional para diferentes centros. <br></p>
+                    
+                </div>
+                
+            </article>
+        </header>
+
+
+        <section id="Horarios">
+            <h2 class="tituloo">Gestión de Usuarios</h2>
+            <div class="horarios-container">
+                <!-- Formulario para agregar usuarios a la izquierda -->
+                <div class="user-form-container">
+                    <form id="userForm" class="user-form">
+                        <div class="form-group">
+                            <label for="userName">Nombre:</label>
+                            <input type="text" id="userName" name="userName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userEmail">Email:</label>
+                            <input type="email" id="userEmail" name="userEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userPhone">Teléfono:</label>
+                            <input type="tel" id="userPhone" name="userPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userPlan">Plan Inicial:</label>
+                            <select id="userPlan" name="userPlan">
+                                <option value="Plan Básico">Plan Básico</option>
+                                <option value="Plan Intermedio">Plan Intermedio</option>
+                                <option value="Plan Avanzado">Plan Avanzado</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Añadir Usuario</button>
+                        </div>
+                    </form>
+                </div>
+        
+                <!-- Tabla de usuarios existentes debajo del formulario -->
+                <div class="user-list-container">
+                    <table class="horarios-table">
+                        <thead>
+                            <tr>
+                                <th class="tablajeje" colspan="4">Usuarios Actuales</th>
+                            </tr>
+                            <tr class="tablajeje">
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Teléfono</th>
+                                <th>Plan</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users">
+                            <!-- Los usuarios agregados dinámicamente se mostrarán aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <script>
+            // JavaScript para gestionar el formulario
+            document.getElementById('userForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Obtener los valores del formulario
+                const name = document.getElementById('userName').value;
+                const email = document.getElementById('userEmail').value;
+                const phone = document.getElementById('userPhone').value;
+                const plan = document.getElementById('userPlan').value;
+        
+                // Añadir el usuario a la tabla de usuarios
+                const userList = document.getElementById('users');
+                const newUserRow = document.createElement('tr');
+                newUserRow.innerHTML = `
+                    <td>${name}</td>
+                    <td>${email}</td>
+                    <td>${phone}</td>
+                    <td>${plan}</td>
+                `;
+                userList.appendChild(newUserRow);
+        
+                // Limpiar el formulario
+                document.getElementById('userForm').reset();
+            });
+        </script>
+        
+
+        <section id="Gimnasios">
+    <h2>Gestionar Ejercicios</h2>
+    <div id="ejercicios-container">
+        <!-- Lista de ejercicios existentes -->
+        <div id="lista-ejercicios">
+            <h3>Ejercicios Disponibles</h3>
+            <ul id="ejercicios-list">
+                <!-- Aquí se llenarán los ejercicios existentes dinámicamente -->
+            </ul>
+        </div>
+        
+        <!-- Formulario para agregar o modificar ejercicios -->
+        <div id="formulario-ejercicio">
+            <h3>Crear o Modificar Ejercicio</h3>
+            <form id="ejercicio-form">
+                <label for="nombre-ejercicio">Nombre del Ejercicio:</label>
+                <input type="text" id="nombre-ejercicio" name="nombre-ejercicio" required>
+
+                <label for="tipo-ejercicio">Tipo de Ejercicio:</label>
+                <input type="text" id="tipo-ejercicio" name="tipo-ejercicio" required>
+
+                <label for="descripcion-ejercicio">Descripción:</label>
+                <textarea id="descripcion-ejercicio" name="descripcion-ejercicio"></textarea>
+
+                <button type="submit" id="agregar-ejercicio-btn">Guardar Ejercicio</button>
+                <button type="button" id="eliminar-ejercicio-btn">Eliminar Ejercicio</button>
+            </form>
+        </div>
+    </div>
+</section>
+        
+        <script>
+            // Ejemplo de array de ejercicios
+let ejercicios = [
+    { id: 1, nombre: 'Sentadilla', tipo: 'Fuerza', descripcion: 'Ejercicio para piernas y glúteos.' },
+    { id: 2, nombre: 'Flexión', tipo: 'Resistencia', descripcion: 'Ejercicio para pectorales y tríceps.' }
+];
+
+// Cargar ejercicios al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    cargarEjercicios();
+});
+
+// Función para cargar los ejercicios en la lista
+function cargarEjercicios() {
+    const listaEjercicios = document.getElementById('ejercicios-list');
+    listaEjercicios.innerHTML = ''; // Limpiar la lista antes de agregar los ejercicios
+
+    ejercicios.forEach(ejercicio => {
+        const li = document.createElement('li');
+        li.textContent = `${ejercicio.nombre} (${ejercicio.tipo}) - ${ejercicio.descripcion}`;
+        li.dataset.id = ejercicio.id;
+        li.addEventListener('click', () => cargarFormulario(ejercicio));
+        listaEjercicios.appendChild(li);
+    });
+}
+
+// Función para cargar el formulario con la información de un ejercicio existente
+function cargarFormulario(ejercicio) {
+    document.getElementById('nombre-ejercicio').value = ejercicio.nombre;
+    document.getElementById('tipo-ejercicio').value = ejercicio.tipo;
+    document.getElementById('descripcion-ejercicio').value = ejercicio.descripcion;
+    document.getElementById('agregar-ejercicio-btn').dataset.id = ejercicio.id; // Asignar el ID al botón de agregar
+}
+
+// Evento de agregar o modificar un ejercicio
+document.getElementById('ejercicio-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const id = document.getElementById('agregar-ejercicio-btn').dataset.id;
+    const nombre = document.getElementById('nombre-ejercicio').value;
+    const tipo = document.getElementById('tipo-ejercicio').value;
+    const descripcion = document.getElementById('descripcion-ejercicio').value;
+
+    if (id) {
+        // Modificar ejercicio existente
+        const ejercicio = ejercicios.find(e => e.id == id);
+        ejercicio.nombre = nombre;
+        ejercicio.tipo = tipo;
+        ejercicio.descripcion = descripcion;
+    } else {
+        // Crear nuevo ejercicio
+        const nuevoEjercicio = {
+            id: Date.now(), // Generar un ID único usando la marca de tiempo
+            nombre,
+            tipo,
+            descripcion
+        };
+        ejercicios.push(nuevoEjercicio); // Agregar el nuevo ejercicio al array
+    }
+
+    cargarEjercicios(); // Recargar la lista de ejercicios
+    e.target.reset(); // Resetear el formulario
+    delete document.getElementById('agregar-ejercicio-btn').dataset.id; // Limpiar el ID asignado al botón
+});
+
+// Evento de eliminar un ejercicio
+document.getElementById('eliminar-ejercicio-btn').addEventListener('click', () => {
+    const id = document.getElementById('agregar-ejercicio-btn').dataset.id;
+    if (id) {
+        ejercicios = ejercicios.filter(e => e.id != id); // Filtrar el ejercicio eliminado
+        cargarEjercicios(); // Recargar la lista de ejercicios
+        document.getElementById('ejercicio-form').reset(); // Resetear el formulario
+        delete document.getElementById('agregar-ejercicio-btn').dataset.id; // Limpiar el ID asignado al botón
+    }
+});
+
+        </script>
+        
+        
+
+
+        <section id="Sobre nosotros">
+            <h2>Gestión de Deportes a Nivel Nacional</h2>
+            <div id="deportes-container">
+                <!-- Lista de deportes existentes -->
+                <div id="lista-deportes">
+                    <h3>Deportes Disponibles</h3>
+                    <ul id="deportes-list">
+                        <!-- Aquí se llenarán los deportes existentes dinámicamente -->
+                    </ul>
+                </div>
+                
+                <!-- Formulario para agregar o modificar deportes -->
+                <div id="formulario-deporte">
+                    <h3>Crear o Modificar Deporte</h3>
+                    <form id="deporte-form">
+                        <label for="nombre-deporte">Nombre del Deporte:</label>
+                        <input type="text" id="nombre-deporte" name="nombre-deporte" required>
+        
+                        <label for="descripcion-deporte">Descripción:</label>
+                        <textarea id="descripcion-deporte" name="descripcion-deporte"></textarea>
+        
+                        <button type="submit" id="agregar-deporte-btn">Guardar Deporte</button>
+                        <button type="button" id="eliminar-deporte-btn">Eliminar Deporte</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <script>
+            // Ejemplo de array de deportes
+            let deportes = [
+                { id: 1, nombre: 'Fútbol', descripcion: 'Deporte en equipo que se juega con un balón.' },
+                { id: 2, nombre: 'Baloncesto', descripcion: 'Deporte en equipo que consiste en encestar el balón en el aro.' }
+            ];
+        
+            // Cargar deportes al cargar la página
+            document.addEventListener('DOMContentLoaded', () => {
+                cargarDeportes();
+            });
+        
+            // Función para cargar los deportes en la lista
+            function cargarDeportes() {
+                const listaDeportes = document.getElementById('deportes-list');
+                listaDeportes.innerHTML = ''; // Limpiar la lista antes de agregar los deportes
+        
+                deportes.forEach(deporte => {
+                    const li = document.createElement('li');
+                    li.textContent = `${deporte.nombre} - ${deporte.descripcion}`;
+                    li.dataset.id = deporte.id;
+                    li.addEventListener('click', () => cargarFormulario(deporte));
+                    listaDeportes.appendChild(li);
+                });
+            }
+        
+            // Función para cargar el formulario con la información de un deporte existente
+            function cargarFormulario(deporte) {
+                document.getElementById('nombre-deporte').value = deporte.nombre;
+                document.getElementById('descripcion-deporte').value = deporte.descripcion;
+                document.getElementById('agregar-deporte-btn').dataset.id = deporte.id; // Asignar el ID al botón de agregar
+            }
+        
+            // Evento de agregar o modificar un deporte
+            document.getElementById('deporte-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const id = document.getElementById('agregar-deporte-btn').dataset.id;
+                const nombre = document.getElementById('nombre-deporte').value;
+                const descripcion = document.getElementById('descripcion-deporte').value;
+        
+                if (id) {
+                    // Modificar deporte existente
+                    const deporte = deportes.find(d => d.id == id);
+                    deporte.nombre = nombre;
+                    deporte.descripcion = descripcion;
+                } else {
+                    // Crear nuevo deporte
+                    const nuevoDeporte = {
+                        id: Date.now(), // Generar un ID único usando la marca de tiempo
+                        nombre,
+                        descripcion
+                    };
+                    deportes.push(nuevoDeporte); // Agregar el nuevo deporte al array
+                }
+        
+                cargarDeportes(); // Recargar la lista de deportes
+                e.target.reset(); // Resetear el formulario
+                delete document.getElementById('agregar-deporte-btn').dataset.id; // Limpiar el ID asignado al botón
+            });
+        
+            // Evento de eliminar un deporte
+            document.getElementById('eliminar-deporte-btn').addEventListener('click', () => {
+                const id = document.getElementById('agregar-deporte-btn').dataset.id;
+                if (id) {
+                    deportes = deportes.filter(d => d.id != id); // Filtrar el deporte eliminado
+                    cargarDeportes(); // Recargar la lista de deportes
+                    document.getElementById('deporte-form').reset(); // Resetear el formulario
+                    delete document.getElementById('agregar-deporte-btn').dataset.id; // Limpiar el ID asignado al botón
+                }
+            });
+        </script>
+        
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </div>
+
+
+</html>

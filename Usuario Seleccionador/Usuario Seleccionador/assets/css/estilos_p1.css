@@ -1,0 +1,973 @@
+@font-face {
+    font-family: Nunito;
+    src: url('../fonts/Nunito.ttf');
+}
+@font-face {
+    font-family: Mono;
+    src: url('../fonts/Montserrat-VariableFont_wght.ttf');
+}
+
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Nunito;
+}
+
+/* Configuración de desplazamiento suave en el HTML */
+html {
+    scroll-behavior: smooth;
+    
+}
+
+/* Ocultar la barra de desplazamiento horizontal */
+body {
+    overflow-x: hidden;
+}
+
+/* Variables de colores */
+:root {
+    --color1: #000000;
+    --color2: #FFFCF1;
+    --color3: #005DBB;
+    --color4: #ffffff;
+    --color5: #8D95A8;
+    --color6: #7d9c9e;
+}
+
+/* Ocultar el menú en pantallas más pequeñas */
+.menu-hidden {
+    display: none;
+}
+
+.menuIcon {
+    display: none;
+}
+
+.menu-icon {
+    display: none ;
+}
+
+/* Estilos para las imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fuentes personalizadas */
+@font-face {
+    font-family: Titulo;
+    src: url('../fonts/BebasNeue.ttf');
+}
+
+@font-face {
+    font-family: Head;
+    src: url('../fonts/Louis-George.ttf');
+}
+
+/* Estilos de navegación */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    background: var(--color2);
+    justify-content: center;
+    z-index: 2;
+}
+
+/* Estilos del encabezado */
+header {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: url(../img/fondo.jpeg) no-repeat center;
+    background-size: 100vw 100vh;
+}
+
+/* Estilos de secciones */
+section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para secciones específicas */
+#home {
+    position: relative;
+    /* Asegura que el encabezado tenga una posición distinta de "static" */
+}
+
+#Gimnasios,
+#Acceder,
+#Sobre\ nosotros,
+#Horarios {
+    background-color: var(--color2);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+#Sobre\ nosotros {
+    background: url(../img/Fondo4.png) no-repeat center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+#Gimnasios {
+    background: url(../img/fondo3.png) no-repeat center;
+    
+}
+#Horarios {
+    background: url(../img/Fondo4.png) no-repeat center;
+    
+}
+
+
+/* Estilos para los artículos */
+article {
+    width: 50vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    text-align: justify;
+}
+
+/* Estilos para el carrusel */
+#EfectoCarrusel {
+    width: 50vw;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Estilos del contenido dentro del carrusel */
+.carousel-inner {
+    text-align: center;
+    /* Alinea el contenido horizontalmente en el centro */
+}
+
+/* Estilos de las imágenes dentro del carrusel */
+.carousel-inner img {
+    max-width: 70%;
+    max-height: 70%;
+    margin: auto;
+    /* Centra la imagen horizontal y verticalmente */
+    border-radius: 20%;
+}
+
+/* Estilos para la segunda división de navegación */
+.div-nav-2 {
+    width: 90vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+/* Estilos para las listas y elementos de navegación */
+ul,
+li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+    justify-content: flex-end;
+    align-items: center;
+    color: var(--color1);
+    font-weight: bold;
+}
+
+/* Estilos del menú de navegación */
+.oc-menu {
+    display: block;
+}
+
+/* Estilos para títulos y texto */
+.div-nav-1 h1 {
+    user-select: none;
+}
+.imagen_logo{
+    margin-left: 15px;
+}
+
+h1 {
+    font-size: 2.5em;
+    background: linear-gradient(to right, #005DBB, #007FFF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-left: 10px;
+    margin-top: 8%;
+    text-align: left;
+    font-family: Mono;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 3em;
+    color: var(--color4);
+    text-align: center;
+    font-family: Head;
+    font-weight: bold;
+}
+
+.parrafo1 {
+    text-align: center;
+    color: var(--color2);
+    line-height: 1.1;
+    /* Ajusta este valor para aumentar el espacio entre líneas */
+    font-family: Head;
+    font-size: 140%;
+}
+
+
+/* Estilos para el encabezado izquierdo y derecho */
+.izq-header,
+.der-header {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para los enlaces */
+.enlaces {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+/* Estilos para los botones */
+.boton {
+    margin: 10px auto;
+    /* Centra el botón horizontalmente */
+    padding: 4px;
+    background: var(--color3);
+    border-radius: 40px;
+    font-family: Nunito;
+    font-size: 20px;
+    width: 200px;
+    height: 45px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 1s;
+    color: var(--color4);
+}
+
+.boton:hover {
+    background: var(--color5);
+}
+
+/* Estilos para el botón de inicio de sesión */
+.login {
+    padding-right: 20px;
+}
+
+/* Estilos para el contenedor de superposición superior */
+.overlaytop-container {
+    position: fixed;
+    top: 10vh;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 2;
+}
+
+/* Estilos para la superposición superior */
+.overlay-top {
+    width: 100%;
+    height: 15px;
+    z-index: 1;
+}
+
+/* Estilos para el contenedor de superposición inferior */
+.overlaybottom-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 102%;
+}
+
+/* Estilos para la superposición inferior */
+.overlay-bottom {
+    width: 102%;
+    height: 15px;
+    z-index: 1;
+}
+
+/* Estilos para el enlace activo en el menú */
+.op-menu a.activo {
+    color: var(--color3);
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 5px 10px;
+}
+
+/* Estilos para el contenedor B */
+.contB {
+    display: none;
+}
+
+
+/* Estilos para el título de la sección */
+.section-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el título h3 */
+h3 {
+    font-size: 4em;
+    color: var(--color3);
+    margin-top: 8%;
+    text-align: center;
+    font-family: Titulo;
+}
+
+/* Estilos para el párrafo parrafo2 */
+.parrafo2 {
+    text-align: center;
+    color: var(--color1);
+    line-height: 1.1; /* Ajusta este valor para aumentar el espacio entre líneas */
+    font-family: Head;
+    font-size: 140%;
+}
+
+/* Estilos para el contenedor principal container */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--color2);
+    padding: 20px;
+    position: relative;
+}
+
+/* Estilos para los contenedores internos "item-container" */
+.item-container {
+    text-align: center;
+    background-color: var(--color3);
+    width: 300px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    border-radius: 40px;
+    transition: box-shadow 0.3s, transform 0.3s;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.item-container:hover {
+    transform: translateY(-7px);
+}
+
+/* Estilos para los títulos h4 en "item-container" */
+.item-container h4 {
+    color: var(--color2);
+    margin-top: 15%;
+    max-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Head;
+    font-size: 30px;
+}
+
+/* Estilos para los logos dentro de los contenedores */
+.container-logo {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+/* Estilos para el párrafo parrafo3 */
+.parrafo3 {
+    margin-top: 25px;
+    text-align: center;
+    color: var(--color2);
+    line-height: 1.1;
+    font-family: Head;
+}
+
+/* Estilos para el párrafo parrafo3 en "item-container" */
+.item-container .parrafo3 {
+    font-size: 110%;
+}
+
+/* Estilos de enlaces */
+a {
+    color: var(--color1);
+    text-decoration: none;
+}
+
+.a1{
+    color: var(--color2);
+    text-decoration: none;
+}
+
+
+a:hover {
+    color: var(--color3);
+    text-decoration: none;
+}
+
+/* Estilos para el botón boton2 */
+.boton2 {
+    margin: 10px auto;
+    margin-top: 20%;
+    padding: 4px;
+    background: var(--color2);
+    border-radius: 40px;
+    font-family: Nunito;
+    font-size: 100%;
+    width: 15vw;
+    height: 7vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 1s;
+    color: var(--color1);
+}
+
+.boton2:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+/* Acceder*/
+
+
+
+/* Estilos para los campos de entrada con los IDs nombre, email y ci */
+#nombre,
+#email,
+#ci {
+    background: transparent;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid grey;
+    outline: none;
+    width: 30vw;
+    height: 4vh;
+    margin-bottom: -10px; /* Ajusta el margen inferior según tus necesidades */
+    color: rgb(58, 58, 58);
+}
+
+/* Estilos para el contenedor principal containerCD */
+.containerCD {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos para los contenedores internos containerC y containerD */
+.containerC,
+.containerD {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin: 10vw; /* Ajusta el margen según tus necesidades */
+}
+
+/* Estilos para el contenedorD */
+.containerD {
+    color: var(--color3);
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 40px;
+}
+
+
+/* Estilos para las etiquetas dentro de containerD */
+.containerD label {
+    margin-top: 3vh;
+    margin-bottom: 3vh; /* Ajusta el margen superior e inferior según tus necesidades */
+}
+
+/* Estilos para los campos de entrada dentro de containerD */
+.containerD input {
+    width: 100%;
+    margin-bottom: 2vh; /* Ajusta el margen inferior entre los campos de entrada */
+}
+
+.containerD select {
+    width: 100%;
+    margin-bottom: 2vh; /* Ajusta el margen inferior entre los campos de entrada */
+}
+
+/* Estilos para el botón boton3 */
+.boton3 {
+    margin: 10px auto;
+    padding: 4px;
+    background: var(--color3);
+    border-radius: 40px;
+    font-family: Nunito;
+    font-size: 20px;
+    width: 200px;
+    height: 45px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 1s;
+    color: var(--color4);
+}
+
+
+
+  /*Sobre nosotros*/
+
+/* Estilos para el contenedorE */
+.containerE {
+    display: flex;
+    position: relative;
+    margin-top: auto;
+    align-items: center;
+}
+
+/* Estilos para los elementos en item-containerC */
+.item-containerC {
+    position: relative;
+    width: 20vw;
+    height: 40vh;
+    background-color: rgba(255, 252, 241, 0.8);
+    margin: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 40px;
+    margin-top:3vh; /* Agregado un margen superior */
+}
+
+/* Estilos específicos para novedad1 */
+#novedad1 {
+    background-image: url('../img/img_muestra/img/iocno2.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-top: 20px;
+}
+
+/* Estilos específicos para novedad2 */
+#novedad2 {
+    background-image: url('../img/img_muestra/img/iocno3.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-top: 20px;
+}
+
+/* Estilos específicos para novedad3 */
+#novedad3 {
+    background-image: url('../img/img_muestra/img/iocno4.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/* Estilos para el párrafo5 dentro de item-containerC */
+.parrafo5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.13);
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+/* Estilos para hover en novedad1, novedad2 y novedad3 */
+#novedad1:hover,
+#novedad2:hover,
+#novedad3:hover {
+    background-image: none;
+}
+
+/* Estilos para el párrafo6 dentro de item-containerC */
+.parrafo6 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: var(--color1);
+    opacity: 1;
+    transition: none;
+    bottom: 0;
+    font-family: Titulo;
+    font-size: 140%;
+}
+
+/* Estilos para mostrar y ocultar los párrafos al hacer hover en item-containerC */
+.item-containerC:hover .parrafo5 {
+    opacity: 1;
+    background-image: none;
+}
+
+.item-containerC:hover .parrafo6 {
+    opacity: 0;
+}
+
+.overlaybottom-container2 {
+margin-top: auto;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Estilos para la superposición inferior */
+.overlay-bottom2 {
+    width: 100%; /* Cambiado a 100% para evitar desbordamientos */
+    height: 15px;
+    z-index: 1;
+}
+
+/* Estilos generales para la gestión de clubes y entrenadores */
+.gestion-container {
+    display: flex; /* Usar flexbox para alinear elementos en fila */
+    justify-content: space-between; /* Espacio entre formularios y tabla */
+    align-items: flex-start; /* Alinear elementos en la parte superior */
+    width: 100%;
+    padding: 20px;
+    gap: 20px; /* Espacio entre los formularios */
+}
+
+/* Estilos para los formularios */
+.gestion-form-container {
+    flex: 0 0 30%; /* Cada formulario ocupa el 30% del ancho */
+    background-color: var(--color2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gestion-form {
+    display: flex;
+    flex-direction: column; /* Alinear el formulario en una columna */
+}
+
+.gestion-form h3 {
+    font-family: Titulo;
+    color: var(--color3);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.gestion-form .form-group {
+    margin-bottom: 15px; /* Espacio entre los campos del formulario */
+}
+
+.gestion-form label {
+    font-family: Titulo;
+    color: var(--color3);
+    margin-bottom: 5px;
+}
+
+.gestion-form input,
+.gestion-form select,
+.gestion-form button {
+    width: 100%; /* El input, select y el botón ocupan todo el ancho */
+    padding: 10px;
+    font-family: Head;
+    font-size: 1em;
+    margin-top: 5px;
+    border: 1px solid var(--color1);
+    border-radius: 5px;
+}
+
+.gestion-form button {
+    background-color: var(--color3);
+    color: var(--color4);
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    margin-top: 10px;
+}
+
+.gestion-form button:hover {
+    background-color: var(--color4);
+    color: var(--color3);
+    border: 1px solid var(--color3);
+}
+
+/* Estilos para el Select */
+.gestion-form select {
+    appearance: none; /* Quitar el estilo por defecto del navegador */
+    background-color: var(--color4);
+    color: var(--color3);
+    cursor: pointer;
+    transition: border 0.3s ease;
+    font-weight: bold;
+}
+
+.gestion-form select:hover,
+.gestion-form select:focus {
+    border-color: var(--color3); /* Cambiar el color del borde al enfocar */
+}
+
+/* Estilos para la tabla */
+.gestion-table-container {
+    flex: 1; /* La tabla ocupa el espacio restante */
+    padding: 20px;
+}
+
+.gestion-table {
+    width: 100%; /* La tabla ocupa todo el ancho del contenedor */
+    border-collapse: collapse;
+    background-color: var(--color2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.gestion-table th,
+.gestion-table td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid var(--color1);
+    font-family: Head;
+    color: var(--color3);
+    font-weight: bold;
+}
+
+.gestion-table th {
+    background-color: var(--color3);
+    color: var(--color4);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.gestion-table tr:hover {
+    background-color: var(--color5); /* Color al pasar el cursor por una fila */
+}
+
+
+/* Contenedor Principal para la Gestión de Planes de Entrenamiento */
+#equipos-container {
+    display: flex; /* Usar flexbox para alinear elementos en fila */
+    justify-content: flex-start; /* Alinear elementos al inicio del contenedor */
+    align-items: flex-start; /* Alinear elementos en la parte superior */
+    width: 100%;
+    padding: 20px;
+    gap: 20px; /* Espacio entre el formulario y la lista de equipos */
+}
+
+/* Estilos para el Formulario de Equipo */
+#formulario-equipo {
+    flex: 0 0 30%; /* El formulario ocupa el 30% del ancho */
+    background-color: var(--color2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin-right: 5%;
+}
+
+#equipo-form {
+    display: flex;
+    flex-direction: column; /* Alinear el formulario en una columna */
+}
+
+#equipo-form label {
+    font-family: Titulo;
+    color: var(--color3);
+    margin-bottom: 5px;
+}
+
+#equipo-form input,
+#equipo-form select,
+#equipo-form button {
+    width: 100%; /* Los inputs, selects y botones ocupan todo el ancho */
+    padding: 10px;
+    font-family: Head;
+    font-size: 1em;
+    margin-top: 5px;
+    border: 1px solid var(--color1);
+    border-radius: 5px;
+}
+
+#equipo-form button {
+    background-color: var(--color3);
+    color: var(--color4);
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    margin-top: 10px;
+}
+
+#equipo-form button:hover {
+    background-color: var(--color5);
+}
+
+/* Estilos para la Tabla de Equipos */
+#lista-equipos {
+    flex: 1; /* La lista de equipos ocupa el resto del espacio disponible */
+    background-color: var(--color2);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-height: 600px; /* Altura máxima para mantener un contenedor manejable */
+    overflow-y: auto; /* Habilitar el desplazamiento vertical si es necesario */
+    width: 100%; /* Ocupar todo el ancho disponible */
+    box-sizing: border-box; /* Incluye el relleno y el borde en el ancho total */
+    margin-left: 5%;
+}
+
+#lista-equipos h3 {
+    margin: 0 0 15px 0; /* Margen inferior para separar el título de la lista */
+    font-family: Titulo;
+    color: var(--color3); /* Color de título */
+}
+
+#tabla-equipos {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tabla-equipos th, #tabla-equipos td {
+    border: 1px solid var(--color1);
+    padding: 10px;
+    text-align: left;
+}
+
+#tabla-equipos th {
+    background-color: var(--color3);
+    color: var(--color4);
+}
+
+#tabla-equipos tr:nth-child(even) {
+    background-color: var(--color4);
+}
+
+#tabla-equipos tr:hover {
+    background-color: var(--color5);
+    color: var(--color2);
+}
+
+/* Estilos para el Select de Deportistas */
+#deportistas-select {
+    background-color: var(--color4);
+    color: var(--color3);
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid var(--color1);
+    border-radius: 5px;
+    padding: 10px;
+    height: 100px;
+}
+
+
+/* Contenedor Principal para la Gestión de Deportes */
+/* Estilos para la tabla de evolución de deportistas */
+#evolucion-container {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#tabla-evolucion {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tabla-evolucion th, #tabla-evolucion td {
+    border: 1px solid var(--color1);
+    padding: 10px;
+    text-align: left;
+}
+
+#tabla-evolucion th {
+    background-color: var(--color3);
+    color: var(--color4);
+}
+
+#tabla-evolucion tr:nth-child(even) {
+    background-color: var(--color4);
+}
+
+#tabla-evolucion tr:hover {
+    background-color: var(--color5);
+    color: var(--color2);
+}
+
+#tabla-evolucion button {
+    padding: 5px 10px;
+    background-color: var(--color3);
+    color: var(--color4);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#tabla-evolucion button:hover {
+    background-color: var(--color5);
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

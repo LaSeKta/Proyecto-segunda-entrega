@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/estilos_p1.css">
+    <link rel="stylesheet" href="assets/css/media_p1.css">
+    <link rel="icon" href="assets/img/Logos/Logo_home.png">
+    <title>S.I.G.EN</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilos_p1.css">
+</head>
+
+<body>
+    <div class="contA">
+        <nav>
+            <div class="imagen_logo"> 
+                <img src="assets/img/Logos/Logo_home.png" width="120em" height="120em" alt="imagen" class="container-logo">
+            </div>
+        
+            <div class="div-nav-1">
+                <h1>S.I.G.EN</h1>
+            </div>
+            <div class="div-nav-2">
+                <ul>
+                    <li class="op-menu"><a id="clic1" href="#home" class="activo">Home</a></li>
+                    <li class="op-menu"><a href="#Horarios">Gestión de Clubes</a></li>
+                    <li class="op-menu"><a href="#Gimnasios">Formación de Equipos</a></li>
+                    <li class="op-menu"><a href="#Sobre nosotros">Evolución Global</a></li>
+                </ul>
+
+                <div class="menu-icon" id="menuIcon">☰
+                    <div class="menu-hidden" id="menuHidden">
+                        <li class="oc-menu"><a href="#home">Home</a></li>
+                        <li class="oc-menu"><a href="#Gimnasios">Formación de Equipos</a></li>
+                        <li class="oc-menu"><a href="#Sobre nosotros">Evolución Global</a></li>
+                        <li class="oc-menu"><a href="#Horarios">Gestión de Clubes</a></li>
+                    </div>
+        </nav>
+        <header id="home">
+
+            <article class="izq-header" id="subir">
+                <div class="">
+                    <div id="EfectoCarrusel" class="carousel slide">
+
+                        <!-- Indicadores-->
+                        <ul class="carousel-indicators">
+                            <li class="item1 active"></li>
+                            <li class="item2"></li>
+                            <li class="item3"></li>
+                        </ul>
+
+                        <!-- Desplazamineto de imágenes -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a href="#Horarios">
+                                <img src="assets/img/img1.png" alt="Interior design 1">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="#Gimnasios">
+                                <img src="assets/img/img2.png" alt="Interior design 2">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="#Sobre nosotros">
+                                <img src="assets/img/img3.png" alt="Interior design 3">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Controles de navegación como flechas -->
+                        <a class="carousel-control-prev" href="#EfectoCarrusel">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#EfectoCarrusel">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div>
+
+            </article>
+            <article class="der-header">
+
+                <div class="texto">
+                    <h2><br>S.I.G.EN</h2>
+                    <p class="parrafo1"> <br> El Usuario Seleccionador puede: <br>
+                        -Consultar evolución global: Acceder y comparar la evolución de deportistas de distintos clubes. <br>
+                        -Armar equipos: Formar equipos para competencias o entrenamientos específicos. <br>
+                        -Gestionar clubes y entrenadores: Añadir y modificar clubes y entrenadores en el sistema.</p>
+                    
+                </div>
+                
+            </article>
+        </header>
+
+
+        <section id="Horarios">
+            <h2 class="tituloo" style="color: var(--color3);">Gestión de Clubes y Entrenadores</h2>
+            <div class="gestion-container">
+                <!-- Formulario para añadir y modificar clubes -->
+                <div class="gestion-form-container">
+                    <form id="clubForm" class="gestion-form">
+                        <h3>Añadir / Modificar <br> Club</h3>
+                        <div class="form-group">
+                            <label for="clubName">Nombre del Club:</label>
+                            <input type="text" id="clubName" name="clubName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clubLocation">Ubicación del Club:</label>
+                            <input type="text" id="clubLocation" name="clubLocation" required>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Registrar Club</button>
+                        </div>
+                    </form>
+                </div>
+        
+                <!-- Tabla para mostrar clubes y entrenadores -->
+                <div class="gestion-table-container">
+                    <table class="gestion-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre del Club</th>
+                                <th>Ubicación</th>
+                                <th>Entrenador</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clubTrainerList">
+                            <!-- Filas agregadas dinámicamente aquí -->
+                        </tbody>
+                    </table>
+                </div>
+        
+                <!-- Formulario para añadir y modificar entrenadores -->
+                <div class="gestion-form-container">
+                    <form id="entrenadorForm" class="gestion-form">
+                        <h3>Añadir / Modificar Entrenador</h3>
+                        <div class="form-group">
+                            <label for="entrenadorName">Nombre del Entrenador:</label>
+                            <input type="text" id="entrenadorName" name="entrenadorName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clubAsignado">Club Asignado:</label>
+                            <select id="clubAsignado" name="clubAsignado" required>
+                                <option value="" disabled selected>Seleccione un Club</option>
+                                <!-- Opciones dinámicas de clubes se agregarán aquí -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Registrar Entrenador</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        
+        
+        <script>
+         // Lista global para almacenar equipos creados
+let equiposCreados = [];
+
+// Manejo del formulario de Clubes
+document.getElementById('clubForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Obtener valores del formulario de Club
+    const clubName = document.getElementById('clubName').value;
+    const clubLocation = document.getElementById('clubLocation').value;
+
+    // Añadir el club a la tabla y al selector
+    addClubToTable(clubName, clubLocation);
+    addClubToSelect(clubName);
+
+    // Añadir el equipo a la lista de equipos creados
+    equiposCreados.push(clubName);
+    actualizarSelectEquiposFormacion(); // Actualiza el selector en "Formación de Equipos"
+
+    // Limpiar el formulario
+    e.target.reset();
+});
+
+// Manejo del formulario de Entrenadores
+document.getElementById('entrenadorForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Obtener valores del formulario de Entrenador
+    const entrenadorName = document.getElementById('entrenadorName').value;
+    const clubAsignado = document.getElementById('clubAsignado').value;
+
+    // Buscar la fila del club asignado en la tabla y actualizar el nombre del entrenador
+    const tableRows = document.querySelectorAll('#clubTrainerList tr');
+    tableRows.forEach(row => {
+        if (row.cells[0].innerText === clubAsignado) {
+            row.cells[2].innerText = entrenadorName;
+        }
+    });
+
+    // Limpiar el formulario
+    e.target.reset();
+});
+
+function addClubToTable(clubName, clubLocation) {
+    const tableBody = document.getElementById('clubTrainerList');
+    const row = document.createElement('tr');
+
+    row.innerHTML = `
+        <td>${clubName}</td>
+        <td>${clubLocation}</td>
+        <td></td>
+        <td><button class="delete-btn">X</button></td>
+    `;
+
+    // Añadir evento al botón de eliminación
+    row.querySelector('.delete-btn').addEventListener('click', function() {
+        row.remove(); // Eliminar la fila
+        // Remover el club de la lista de equipos creados
+        equiposCreados = equiposCreados.filter(equipo => equipo !== clubName);
+        actualizarSelectEquiposFormacion(); // Actualiza el selector en "Formación de Equipos"
+        actualizarSelectClubAsignado(); // Actualiza el selector de "Club Asignado"
+    });
+
+    tableBody.appendChild(row);
+}
+
+function addClubToSelect(clubName) {
+    const clubSelect = document.getElementById('clubAsignado');
+    const option = document.createElement('option');
+
+    option.value = clubName;
+    option.textContent = clubName;
+
+    clubSelect.appendChild(option);
+}
+
+// Función para actualizar el selector de equipos en "Formación de Equipos"
+function actualizarSelectEquiposFormacion() {
+    const equipoSelect = document.getElementById('equipo-select');
+    equipoSelect.innerHTML = '<option value="" disabled selected>Seleccione un equipo</option>'; // Resetear opciones
+
+    equiposCreados.forEach(equipo => {
+        const option = document.createElement('option');
+        option.value = equipo;
+        option.textContent = equipo;
+        equipoSelect.appendChild(option);
+    });
+}
+
+// Función para actualizar el selector de "Club Asignado"
+function actualizarSelectClubAsignado() {
+    const clubSelect = document.getElementById('clubAsignado');
+    clubSelect.innerHTML = '<option value="" disabled selected>Seleccione un club</option>'; // Resetear opciones
+
+    equiposCreados.forEach(club => {
+        const option = document.createElement('option');
+        option.value = club;
+        option.textContent = club;
+        clubSelect.appendChild(option);
+    });
+}
+
+            </script>
+        
+
+        <section id="Gimnasios">
+            <h2 style="color: var(--color3);">Formación de Equipos</h2>
+            <div id="equipos-container">
+                <!-- Lista de equipos formados -->
+                <div id="lista-equipos">
+                    <h3>Equipos Formados</h3>
+                    <table id="tabla-equipos">
+                        <thead>
+                            <tr>
+                                <th>Equipo</th>
+                                <th>Deporte</th>
+                                <th>Tipo de Actividad</th>
+                                <th>Deportistas</th>
+                                <th>Acciones</th> <!-- Nueva columna para botones de eliminación -->
+                            </tr>
+                        </thead>
+                        <tbody id="equipos-list">
+                            <!-- Filas agregadas dinámicamente aquí -->
+                        </tbody>
+                    </table>
+                </div>
+        
+                <!-- Formulario para armar equipos -->
+                <div id="formulario-equipo">
+                    <h3>Crear o Modificar Equipo</h3>
+                    <form id="equipo-form">
+                        <label for="equipo-select">Seleccionar Equipo:</label>
+                        <select id="equipo-select" name="equipo-select" required>
+                            <option value="" disabled selected>Seleccione un equipo</option>
+                            <!-- Opciones de equipos se llenarán dinámicamente -->
+                        </select>
+        
+                        <label for="deporte-equipo">Deporte:</label>
+                        <select id="deporte-equipo" name="deporte-equipo" required>
+                            <option value="Baloncesto">Baloncesto</option>
+                            <option value="Fútbol">Fútbol</option>
+                            <option value="Tenis">Tenis</option>
+                            <option value="Carrera">Carrera</option>
+                            <option value="Natación">Natación</option>
+                            <option value="Ciclismo">Ciclismo</option>
+                            <option value="Artes marciales">Artes marciales</option>
+                            <option value="Esquí de fondo">Esquí de fondo</option>
+                            <option value="Patinaje">Patinaje</option>
+                        </select>
+        
+                        <label for="tipo-actividad">Tipo de Actividad:</label>
+                        <select id="tipo-actividad" name="tipo-actividad" required>
+                            <option value="Competencia">Competencia</option>
+                            <option value="Entrenamiento">Entrenamiento</option>
+                        </select>
+        
+                        <label for="deportistas-select">Seleccionar Deportistas:</label>
+                        <select id="deportistas-select" name="deportistas-select" multiple required>
+                            <!-- Opciones de deportistas se llenarán dinámicamente -->
+                        </select>
+        
+                        <button type="submit" id="guardar-equipo-btn">Guardar Equipo</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        
+        
+        <script>
+       // Manejo del formulario de Formación de Equipos
+document.getElementById('equipo-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Obtener valores del formulario de Equipo
+    const equipoSeleccionado = document.getElementById('equipo-select').value;
+    const deporteEquipo = document.getElementById('deporte-equipo').value;
+    const tipoActividad = document.getElementById('tipo-actividad').value;
+    const deportistasSeleccionados = Array.from(document.getElementById('deportistas-select').selectedOptions)
+                                          .map(option => option.value);
+
+    // Añadir el equipo a la tabla de equipos
+    addEquipoToTable(equipoSeleccionado, deporteEquipo, tipoActividad, deportistasSeleccionados);
+
+    // Añadir deportistas a la tabla de Evolución Global llamando a la función del otro script
+    if (typeof addDeportistasToEvolucionGlobal === 'function') {
+        addDeportistasToEvolucionGlobal(equipoSeleccionado, deportistasSeleccionados);
+    }
+
+    // Limpiar el formulario
+    e.target.reset();
+});
+
+function addEquipoToTable(equipo, deporte, actividad, deportistas) {
+    const equiposTable = document.getElementById('equipos-list');
+    const row = document.createElement('tr');
+
+    row.innerHTML = `
+        <td>${equipo}</td>
+        <td>${deporte}</td>
+        <td>${actividad}</td>
+        <td>${deportistas.join(', ')}</td>
+        <td><button class="delete-btn">X</button></td> <!-- Botón para eliminar la fila -->
+    `;
+
+    // Añadir evento al botón de eliminación
+    row.querySelector('.delete-btn').addEventListener('click', function() {
+        row.remove(); // Eliminar la fila
+    });
+
+    equiposTable.appendChild(row);
+}
+
+// Simulación: Añadir opciones de deportistas al selector
+function populateDeportistas() {
+    const deportistasSelect = document.getElementById('deportistas-select');
+    const deportistas = ['Juan Perez', 'María Gomez', 'Carlos Sanchez', 'Ana Rodriguez'];
+
+    deportistas.forEach(deportista => {
+        const option = document.createElement('option');
+        option.value = deportista;
+        option.textContent = deportista;
+        deportistasSelect.appendChild(option);
+    });
+}
+
+// Llenar select de deportistas al cargar la página
+populateDeportistas();
+
+
+        </script>
+        
+        <section id="Sobre nosotros">
+            <div id="evolucion-container">
+                <h2 style="color: var(--color3);">Evolución Global</h2>
+                <p style="color: var(--color3); font-weight: bold;">Comparar y analizar el desempeño de deportistas de diferentes clubes.</p>
+        
+                <table id="tabla-evolucion">
+                    <thead>
+                        <tr>
+                            <th>Deportista</th>
+                            <th>Club</th>
+                            <th>Progreso</th>
+                            <th>Comparar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="evolucion-list">
+                        <!-- Filas serán agregadas dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        
+        <!-- Modal para la gráfica de comparación -->
+        <div id="modal-comparacion" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <canvas id="grafico-comparacion"></canvas>
+            </div>
+        </div>
+        
+        
+        
+        
+        <script>
+       // Función para añadir deportistas a la tabla de Evolución Global
+// Arreglo para almacenar los progresos de los deportistas
+let progresos = [];
+
+// Función para añadir deportistas a la tabla de Evolución Global
+function addDeportistasToEvolucionGlobal(equipo, deportistas) {
+    const evolucionTable = document.getElementById('evolucion-list');
+
+    deportistas.forEach(deportista => {
+        const row = document.createElement('tr');
+        const progresoAleatorio = Math.floor(Math.random() * 101); // Generar un progreso aleatorio entre 0 y 100%
+
+        // Añadir el progreso al arreglo de progresos
+        progresos.push(progresoAleatorio);
+
+        row.innerHTML = `
+            <td>${deportista}</td>
+            <td>${equipo}</td>
+            <td class="progreso">${progresoAleatorio}%</td>
+            <td>
+                <button class="comparar" data-deportista="${deportista}" data-progreso="${progresoAleatorio}">Comparar</button>
+                <button class="eliminar" data-progreso="${progresoAleatorio}">Eliminar</button>
+            </td>
+        `;
+
+        // Añadir evento al botón de comparar
+        row.querySelector('.comparar').addEventListener('click', (event) => {
+            const deportista = event.target.getAttribute('data-deportista');
+            const progreso = parseInt(event.target.getAttribute('data-progreso'), 10);
+
+            // Mostrar el modal y la gráfica
+            mostrarModalConGrafico(deportista, progreso);
+        });
+
+        // Añadir evento al botón de eliminar
+        row.querySelector('.eliminar').addEventListener('click', (event) => {
+            const progreso = parseInt(event.target.getAttribute('data-progreso'), 10);
+
+            // Remover el progreso del arreglo de progresos
+            progresos = progresos.filter(p => p !== progreso);
+
+            // Eliminar la fila de la tabla
+            row.remove();
+
+            // Actualizar el promedio si es necesario
+            actualizarPromedio();
+        });
+
+        evolucionTable.appendChild(row);
+    });
+}
+
+function mostrarModalConGrafico(deportista, progreso) {
+    const modal = document.getElementById('modal-comparacion');
+    const ctx = document.getElementById('grafico-comparacion').getContext('2d');
+
+    // Calcular el promedio del progreso de todos los deportistas
+    const promedioProgreso = progresos.reduce((acc, curr) => acc + curr, 0) / progresos.length;
+
+    // Mostrar modal
+    modal.style.display = 'block';
+
+    // Crear gráfica de comparación usando Chart.js
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: [deportista, 'Promedio Club'],
+            datasets: [{
+                label: 'Progreso',
+                data: [progreso, promedioProgreso.toFixed(2)], // Mostrar el progreso y el promedio calculado
+                backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(153, 102, 255, 0.2)'],
+                borderColor: ['rgba(75, 192, 192, 1)', 'rgba(153, 102, 255, 1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100
+                }
+            }
+        }
+    });
+}
+
+// Función para actualizar el promedio mostrado
+function actualizarPromedio() {
+    if (progresos.length === 0) {
+        console.log('No hay deportistas en la tabla para calcular el promedio.');
+        return;
+    }
+
+    const promedioProgreso = progresos.reduce((acc, curr) => acc + curr, 0) / progresos.length;
+    console.log(`Promedio actualizado: ${promedioProgreso.toFixed(2)}%`);
+}
+
+// Cerrar el modal al hacer clic en el botón de cerrar
+document.querySelector('.close').addEventListener('click', () => {
+    document.getElementById('modal-comparacion').style.display = 'none';
+});
+
+// Cerrar el modal si se hace clic fuera del contenido
+window.onclick = function(event) {
+    const modal = document.getElementById('modal-comparacion');
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+};
+
+
+
+
+
+</script>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </div>
+
+
+</html>

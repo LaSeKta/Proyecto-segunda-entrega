@@ -1,5 +1,9 @@
 CREATE DATABASE sigen;
 
+
+
+
+
 USE sigen;
 
 CREATE TABLE usuarios (

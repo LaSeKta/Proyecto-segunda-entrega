@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/estilos_p1.css">
+    <link rel="stylesheet" href="assets/css/media_p1.css">
+    <link rel="icon" href="assets/img/Logos/Logo_home.png">
+    <title>S.I.G.EN</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilos_p1.css">
+</head>
+
+<body>
+    <div class="contA">
+        <nav>
+            <div class="imagen_logo"> 
+                <img src="assets/img/Logos/Logo_home.png" width="120em" height="120em" alt="imagen" class="container-logo">
+            </div>
+        
+            <div class="div-nav-1">
+                <h1>S.I.G.EN</h1>
+            </div>
+            <div class="div-nav-2">
+                <ul>
+                    <li class="op-menu"><a id="clic1" href="#home" class="activo">Home</a></li>
+                    <li class="op-menu"><a href="#Horarios">Gestión de Usuarios y Permisos</a></li>
+                    <li class="op-menu"><a href="#Gimnasios">Seguridad del Sistema</a></li>
+                    <li class="op-menu"><a href="#Sobre nosotros">Monitoreo Técnico</a></li>
+                </ul>
+
+                <div class="menu-icon" id="menuIcon">☰
+                    <div class="menu-hidden" id="menuHidden">
+                        <li class="oc-menu"><a href="#home">Home</a></li>
+                        <li class="oc-menu"><a href="#Gimnasios">Seguridad del Sistema</a></li>
+                        <li class="oc-menu"><a href="#Sobre nosotros">Monitoreo Técnico</a></li>
+                        <li class="oc-menu"><a href="#Horarios">Gestión de Usuarios y Permisos</a></li>
+                    </div>
+        </nav>
+        <header id="home">
+
+            <article class="izq-header" id="subir">
+                <div class="">
+                    <div id="EfectoCarrusel" class="carousel slide">
+
+                        <!-- Indicadores-->
+                        <ul class="carousel-indicators">
+                            <li class="item1 active"></li>
+                            <li class="item2"></li>
+                            <li class="item3"></li>
+                        </ul>
+
+                        <!-- Desplazamineto de imágenes -->
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a href="#Horarios">
+                                <img src="assets/img/img1.png" alt="Interior design 1">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="#Gimnasios">
+                                <img src="assets/img/img2.png" alt="Interior design 2">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a href="#Sobre nosotros">
+                                <img src="assets/img/img3.png" alt="Interior design 3">
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Controles de navegación como flechas -->
+                        <a class="carousel-control-prev" href="#EfectoCarrusel">
+                            <span class="carousel-control-prev-icon"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#EfectoCarrusel">
+                            <span class="carousel-control-next-icon"></span>
+                        </a>
+                    </div>
+
+            </article>
+            <article class="der-header">
+
+                <div class="texto">
+                    <h2><br>S.I.G.EN</h2>
+                    <p class="parrafo1"> <br> El Usuario Administrador TI es responsable de: <br>
+
+                        -Gestión de usuarios y permisos: Controla el acceso, crea y elimina usuarios, y asigna permisos específicos. <br>
+                        -Supervisión técnica: Monitorea la infraestructura técnica, gestiona bases de datos, realiza backups, y asegura la seguridad del sistema. <br>
+                        -Configuración de alertas: Establece y ajusta las condiciones para la generación de alertas en el sistema para eventos críticos y rendimiento. <br></p>
+                    
+                </div>
+                
+            </article>
+        </header>
+
+
+        <section id="Horarios">
+            <h2 class="tituloo">Gestión de Usuarios y Permisos</h2>
+            <div class="horarios-container">
+                <!-- Formulario para agregar usuarios a la izquierda -->
+                <div class="user-form-container">
+                    <form id="userForm" class="user-form">
+                        <div class="form-group">
+                            <label for="userName">Nombre:</label>
+                            <input type="text" id="userName" name="userName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userEmail">Email:</label>
+                            <input type="email" id="userEmail" name="userEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userRole">Rol:</label>
+                            <select id="userRole" name="userRole">
+                                <option value="Usuario Cliente">Usuario Cliente</option>
+                                <option value="Usuario Administrativo">Usuario Administrativo</option>
+                                <option value="Usuario Avanzado">Usuario Avanzado</option>
+                                <option value="Entrenador">Entrenador</option>
+                                <option value="Usuario Seleccionador">Usuario Seleccionador</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Añadir Usuario</button>
+                        </div>
+                    </form>
+                </div>
+        
+                <!-- Tabla de usuarios existentes con opciones de permisos -->
+                <div class="user-list-container">
+                    <table class="horarios-table">
+                        <thead>
+                            <tr>
+                                <th class="tablajeje" colspan="5">Usuarios Actuales y Permisos </th>
+                            </tr>
+                            <tr class="tablajeje">
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Rol</th>
+                                <th>Permisos Específicos</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users">
+                            <!-- Los usuarios agregados dinámicamente se mostrarán aquí -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        
+            <!-- Modal para editar permisos y rol -->
+            <div id="editModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h3>Editar Permisos y Rol</h3>
+                    <form id="editForm">
+                        <div class="form-group">
+                            <label for="editRole">Rol:</label>
+                            <select id="editRole" name="editRole">
+                                <option value="Usuario Cliente">Usuario Cliente</option>
+                                <option value="Usuario Administrativo">Usuario Administrativo</option>
+                                <option value="Usuario Avanzado">Usuario Avanzado</option>
+                                <option value="Entrenador">Entrenador</option>
+                                <option value="Usuario Seleccionador">Usuario Seleccionador</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="editPermissions">Permisos Específicos:</label>
+                            <input type="text" id="editPermissions" name="editPermissions" placeholder="Ingresar permisos separados por coma">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Guardar Cambios</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        <script>
+           document.addEventListener('DOMContentLoaded', () => {
+    const userForm = document.getElementById('userForm');
+    const usersTable = document.getElementById('users');
+    const editModal = document.getElementById('editModal');
+    const closeButton = document.querySelector('.close-button');
+    const editForm = document.getElementById('editForm');
+    let usersList = [];
+    let currentUserID = null;
+
+    // Función para agregar un nuevo usuario
+    userForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        // Obtener datos del formulario
+        const userName = document.getElementById('userName').value;
+        const userEmail = document.getElementById('userEmail').value;
+        const userRole = document.getElementById('userRole').value;
+
+        // Crear un nuevo usuario
+        const newUser = {
+            id: Date.now(),
+            name: userName,
+            email: userEmail,
+            role: userRole,
+            permissions: []
+        };
+
+        // Añadir usuario a la lista
+        usersList.push(newUser);
+
+        // Renderizar la tabla con los usuarios actualizados
+        renderUsersTable();
+
+        // Limpiar el formulario
+        userForm.reset();
+    });
+
+    // Función para renderizar la tabla de usuarios
+    function renderUsersTable() {
+        usersTable.innerHTML = '';
+
+        usersList.forEach(user => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${user.name}</td>
+                <td>${user.email}</td>
+                <td>${user.role}</td>
+                <td>${user.permissions.join(', ') || 'Sin permisos específicos'}</td>
+                <td>
+                    <button class="edit-button" onclick="editPermissions(${user.id})">Editar Permisos</button>
+                    <button class="delete-button" onclick="deleteUser(${user.id})">Eliminar</button>
+                </td>
+            `;
+            usersTable.appendChild(row);
+        });
+    }
+
+    // Función para eliminar un usuario por ID
+    window.deleteUser = function(userId) {
+        usersList = usersList.filter(user => user.id !== userId);
+        renderUsersTable();
+    }
+
+    // Función para abrir el modal y editar permisos y rol
+    window.editPermissions = function(userId) {
+        currentUserID = userId;
+        const user = usersList.find(user => user.id === userId);
+        if (user) {
+            document.getElementById('editRole').value = user.role;
+            document.getElementById('editPermissions').value = user.permissions.join(', ');
+            editModal.style.display = 'block';
+        }
+    }
+
+    // Cerrar el modal
+    closeButton.addEventListener('click', () => {
+        editModal.style.display = 'none';
+    });
+
+    // Guardar cambios desde el modal
+    editForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const newRole = document.getElementById('editRole').value;
+        const newPermissions = document.getElementById('editPermissions').value.split(',').map(p => p.trim());
+
+        const user = usersList.find(user => user.id === currentUserID);
+        if (user) {
+            user.role = newRole;
+            user.permissions = newPermissions;
+            renderUsersTable();
+        }
+
+        editModal.style.display = 'none';
+    });
+
+    // Cerrar el modal si se hace clic fuera del contenido
+    window.addEventListener('click', (event) => {
+        if (event.target == editModal) {
+            editModal.style.display = 'none';
+        }
+    });
+});
+
+
+        </script>
+        
+
+        <section id="Gimnasios">
+            <div class="section-title">
+                <h3 class="tituloo">Seguridad del Sistema</h3>
+                <p class="parrafo2">Garantiza la integridad y seguridad de la infraestructura técnica de tu página. <br> Realiza monitoreos constantes, gestiona bases de datos, y asegura la protección de la información con nuestras herramientas avanzadas.</p>
+            </div>
+        
+            <div class="container">
+                <!-- Monitorear Infraestructura -->
+                <div class="item-container">
+                    <h4>Monitorear<br>Infraestructura</h4>
+                    <div class="paragraphs-and-button">
+                        <p class="parrafo3">Supervisa el rendimiento y la seguridad de tu infraestructura técnica para prevenir fallos y mantener un servicio óptimo.</p>
+                        <a class="boton2" href="#MonitorearInfraestructura">Monitorear</a>
+                    </div>
+                </div>
+        
+                <!-- Gestión de Bases de Datos -->
+                <div class="item-container">
+                    <h4>Gestión de<br>Bases de Datos</h4>
+                    <div class="paragraphs-and-button">
+                        <p class="parrafo3">Administra y optimiza tus bases de datos para un manejo eficiente de la información y mejora en los tiempos de respuesta.</p>
+                        <a class="boton2" href="#GestionBasesDeDatos">Gestionar Bases de Datos</a>
+                    </div>
+                </div>
+        
+                <!-- Realizar Backups -->
+                <div class="item-container">
+                    <h4>Realizar<br>Backups</h4>
+                    <div class="paragraphs-and-button">
+                        <p class="parrafo33">Configura y ejecuta copias de seguridad automáticas <br> para proteger tus datos críticos <br> ante cualquier eventualidad.</p>
+                        <a class="boton23" href="#RealizarBackups">Realizar Backup</a>
+                    </div>
+                </div>
+        
+                <!-- Supervisar Seguridad -->
+                <div class="item-container">
+                    <h4>Supervisar<br>Seguridad</h4>
+                    <div class="paragraphs-and-button">
+                        <p class="parrafo3">Verifica y ajusta los niveles de seguridad para proteger tu sistema de accesos no autorizados y posibles amenazas.</p>
+                        <a class="boton2" href="#SupervisarSeguridad">Supervisar Seguridad</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        <script>
+            // Ejemplo de array de ejercicios
+let ejercicios = [
+    { id: 1, nombre: 'Sentadilla', tipo: 'Fuerza', descripcion: 'Ejercicio para piernas y glúteos.' },
+    { id: 2, nombre: 'Flexión', tipo: 'Resistencia', descripcion: 'Ejercicio para pectorales y tríceps.' }
+];
+
+// Cargar ejercicios al cargar la página
+document.addEventListener('DOMContentLoaded', () => {
+    cargarEjercicios();
+});
+
+// Función para cargar los ejercicios en la lista
+function cargarEjercicios() {
+    const listaEjercicios = document.getElementById('ejercicios-list');
+    listaEjercicios.innerHTML = ''; // Limpiar la lista antes de agregar los ejercicios
+
+    ejercicios.forEach(ejercicio => {
+        const li = document.createElement('li');
+        li.textContent = `${ejercicio.nombre} (${ejercicio.tipo}) - ${ejercicio.descripcion}`;
+        li.dataset.id = ejercicio.id;
+        li.addEventListener('click', () => cargarFormulario(ejercicio));
+        listaEjercicios.appendChild(li);
+    });
+}
+
+// Función para cargar el formulario con la información de un ejercicio existente
+function cargarFormulario(ejercicio) {
+    document.getElementById('nombre-ejercicio').value = ejercicio.nombre;
+    document.getElementById('tipo-ejercicio').value = ejercicio.tipo;
+    document.getElementById('descripcion-ejercicio').value = ejercicio.descripcion;
+    document.getElementById('agregar-ejercicio-btn').dataset.id = ejercicio.id; // Asignar el ID al botón de agregar
+}
+
+// Evento de agregar o modificar un ejercicio
+document.getElementById('ejercicio-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const id = document.getElementById('agregar-ejercicio-btn').dataset.id;
+    const nombre = document.getElementById('nombre-ejercicio').value;
+    const tipo = document.getElementById('tipo-ejercicio').value;
+    const descripcion = document.getElementById('descripcion-ejercicio').value;
+
+    if (id) {
+        // Modificar ejercicio existente
+        const ejercicio = ejercicios.find(e => e.id == id);
+        ejercicio.nombre = nombre;
+        ejercicio.tipo = tipo;
+        ejercicio.descripcion = descripcion;
+    } else {
+        // Crear nuevo ejercicio
+        const nuevoEjercicio = {
+            id: Date.now(), // Generar un ID único usando la marca de tiempo
+            nombre,
+            tipo,
+            descripcion
+        };
+        ejercicios.push(nuevoEjercicio); // Agregar el nuevo ejercicio al array
+    }
+
+    cargarEjercicios(); // Recargar la lista de ejercicios
+    e.target.reset(); // Resetear el formulario
+    delete document.getElementById('agregar-ejercicio-btn').dataset.id; // Limpiar el ID asignado al botón
+});
+
+// Evento de eliminar un ejercicio
+document.getElementById('eliminar-ejercicio-btn').addEventListener('click', () => {
+    const id = document.getElementById('agregar-ejercicio-btn').dataset.id;
+    if (id) {
+        ejercicios = ejercicios.filter(e => e.id != id); // Filtrar el ejercicio eliminado
+        cargarEjercicios(); // Recargar la lista de ejercicios
+        document.getElementById('ejercicio-form').reset(); // Resetear el formulario
+        delete document.getElementById('agregar-ejercicio-btn').dataset.id; // Limpiar el ID asignado al botón
+    }
+});
+
+        </script>
+        
+        
+
+
+        <section id="Sobre nosotros">
+            <h2 style="color: var(--color3);">Monitoreo Técnico</h2>
+            <div id="alertas-container">
+                <!-- Configuración de alertas -->
+                <div id="configuracion-alertas">
+                    <h3>Configuración de Alertas</h3>
+                    <form id="alertas-form">
+                        <label for="tipo-alerta">Tipo de Alerta:</label>
+                        <select id="tipo-alerta" name="tipo-alerta" required>
+                            <option value="">Seleccionar tipo</option>
+                            <option value="seguridad">Seguridad</option>
+                            <option value="rendimiento">Rendimiento</option>
+                            <option value="disponibilidad">Disponibilidad</option>
+                        </select>
+        
+                        <label for="parametros-alerta">Parámetros:</label>
+                        <textarea id="parametros-alerta" name="parametros-alerta" placeholder="Define los parámetros de la alerta"></textarea>
+        
+                        <label for="nivel-alerta">Nivel de Alerta:</label>
+                        <select id="nivel-alerta" name="nivel-alerta" required>
+                            <option value="">Seleccionar nivel</option>
+                            <option value="bajo">Bajo</option>
+                            <option value="medio">Medio</option>
+                            <option value="alto">Alto</option>
+                        </select>
+        
+                        <button type="submit" id="guardar-alerta-btn">Guardar Alerta</button>
+                    </form>
+                </div>
+        
+                <!-- Tabla de alertas creadas -->
+                <div id="lista-alertas">
+                    <h3>Alertas Creadas</h3>
+                    <table id="alertas-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo de Alerta</th>
+                                <th>Parámetros</th>
+                                <th>Nivel de Alerta</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Las alertas creadas se agregarán aquí dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+    const alertasForm = document.getElementById('alertas-form');
+    const alertasTableBody = document.querySelector('#alertas-table tbody');
+    let alertas = []; // Arreglo para almacenar las alertas
+
+    // Maneja el evento de submit del formulario para agregar una alerta
+    alertasForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevenir el envío del formulario
+
+        // Obtener valores del formulario
+        const tipoAlerta = document.getElementById('tipo-alerta').value;
+        const parametrosAlerta = document.getElementById('parametros-alerta').value;
+        const nivelAlerta = document.getElementById('nivel-alerta').value;
+
+        // Crear un objeto alerta
+        const nuevaAlerta = {
+            tipo: tipoAlerta,
+            parametros: parametrosAlerta,
+            nivel: nivelAlerta
+        };
+
+        // Agregar la nueva alerta al arreglo
+        alertas.push(nuevaAlerta);
+
+        // Actualizar la tabla de alertas
+        actualizarTablaAlertas();
+
+        // Limpiar el formulario
+        alertasForm.reset();
+    });
+
+    // Función para actualizar la tabla de alertas
+    function actualizarTablaAlertas() {
+        // Limpiar el contenido de la tabla
+        alertasTableBody.innerHTML = '';
+
+        // Recorrer las alertas y agregarlas a la tabla
+        alertas.forEach((alerta, index) => {
+            const row = document.createElement('tr');
+
+            // Crear las celdas para cada propiedad de la alerta
+            row.innerHTML = `
+                <td>${alerta.tipo}</td>
+                <td>${alerta.parametros}</td>
+                <td>${alerta.nivel}</td>
+                <td>
+                    <button class="eliminar-alerta-btn" data-index="${index}">Eliminar</button>
+                </td>
+            `;
+
+            alertasTableBody.appendChild(row);
+        });
+
+        // Agregar eventos a los botones de eliminar
+        const eliminarButtons = document.querySelectorAll('.eliminar-alerta-btn');
+        eliminarButtons.forEach(button => {
+            button.addEventListener('click', eliminarAlerta);
+        });
+    }
+
+    // Función para eliminar una alerta
+    function eliminarAlerta(event) {
+        const index = event.target.getAttribute('data-index');
+
+        // Remover la alerta del arreglo
+        alertas.splice(index, 1);
+
+        // Actualizar la tabla de alertas
+        actualizarTablaAlertas();
+    }
+});
+
+        </script>
+        
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </div>
+
+
+</html>

@@ -7,25 +7,20 @@
     src: url('../fonts/Montserrat-VariableFont_wght.ttf');
 }
 
-/* Estilos globales */
 * {
     margin: 0;
     padding: 0;
     font-family: Nunito;
 }
 
-/* Configuración de desplazamiento suave en el HTML */
 html {
     scroll-behavior: smooth;
-    
 }
 
-/* Ocultar la barra de desplazamiento horizontal */
 body {
     overflow-x: hidden;
 }
 
-/* Variables de colores */
 :root {
     --color1: #000000;
     --color2: #FFFCF1;
@@ -35,7 +30,6 @@ body {
     --color6: #7d9c9e;
 }
 
-/* Ocultar el menú en pantallas más pequeñas */
 .menu-hidden {
     display: none;
 }
@@ -45,16 +39,14 @@ body {
 }
 
 .menu-icon {
-    display: none ;
+    display: none;
 }
 
-/* Estilos para las imágenes */
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* Fuentes personalizadas */
 @font-face {
     font-family: Titulo;
     src: url('../fonts/BebasNeue.ttf');
@@ -65,7 +57,6 @@ img {
     src: url('../fonts/Louis-George.ttf');
 }
 
-/* Estilos de navegación */
 nav {
     position: fixed;
     top: 0;
@@ -79,7 +70,6 @@ nav {
     z-index: 2;
 }
 
-/* Estilos del encabezado */
 header {
     width: 100vw;
     height: 100vh;
@@ -89,7 +79,6 @@ header {
     background-size: 100vw 100vh;
 }
 
-/* Estilos de secciones */
 section {
     width: 100vw;
     height: 100vh;
@@ -98,10 +87,8 @@ section {
     align-items: center;
 }
 
-/* Estilos para secciones específicas */
 #home {
     position: relative;
-    /* Asegura que el encabezado tenga una posición distinta de "static" */
 }
 
 #Gimnasios,
@@ -116,7 +103,6 @@ section {
     text-align: center;
 }
 
-
 #Sobre\ nosotros {
     background: url(../img/Fondo4.png) no-repeat center;
     background-size: cover;
@@ -125,17 +111,15 @@ section {
     align-items: center;
     text-align: center;
 }
+
 #Gimnasios {
     background: url(../img/fondo3.png) no-repeat center;
-    
 }
+
 #Horarios {
     background: url(../img/Fondo4.png) no-repeat center;
-    
 }
 
-
-/* Estilos para los artículos */
 article {
     width: 50vw;
     height: 100vh;
@@ -146,7 +130,6 @@ article {
     text-align: justify;
 }
 
-/* Estilos para el carrusel */
 #EfectoCarrusel {
     width: 50vw;
     height: 60vh;
@@ -156,22 +139,17 @@ article {
     overflow: hidden;
 }
 
-/* Estilos del contenido dentro del carrusel */
 .carousel-inner {
     text-align: center;
-    /* Alinea el contenido horizontalmente en el centro */
 }
 
-/* Estilos de las imágenes dentro del carrusel */
 .carousel-inner img {
     max-width: 70%;
     max-height: 70%;
     margin: auto;
-    /* Centra la imagen horizontal y verticalmente */
     border-radius: 20%;
 }
 
-/* Estilos para la segunda división de navegación */
 .div-nav-2 {
     width: 90vw;
     height: 10vh;
@@ -180,7 +158,6 @@ article {
     justify-content: right;
 }
 
-/* Estilos para las listas y elementos de navegación */
 ul,
 li {
     list-style-type: none;
@@ -193,16 +170,15 @@ li {
     font-weight: bold;
 }
 
-/* Estilos del menú de navegación */
 .oc-menu {
     display: block;
 }
 
-/* Estilos para títulos y texto */
 .div-nav-1 h1 {
     user-select: none;
 }
-.imagen_logo{
+
+.imagen_logo {
     margin-left: 15px;
 }
 
@@ -231,13 +207,10 @@ h2 {
     text-align: center;
     color: var(--color2);
     line-height: 1.1;
-    /* Ajusta este valor para aumentar el espacio entre líneas */
     font-family: Head;
     font-size: 140%;
 }
 
-
-/* Estilos para el encabezado izquierdo y derecho */
 .izq-header,
 .der-header {
     width: 100vw;
@@ -247,17 +220,14 @@ h2 {
     align-items: center;
 }
 
-/* Estilos para los enlaces */
 .enlaces {
     display: flex;
     flex-direction: row;
     margin-top: 20px;
 }
 
-/* Estilos para los botones */
 .boton {
     margin: 10px auto;
-    /* Centra el botón horizontalmente */
     padding: 4px;
     background: var(--color3);
     border-radius: 40px;
@@ -278,12 +248,10 @@ h2 {
     background: var(--color5);
 }
 
-/* Estilos para el botón de inicio de sesión */
 .login {
     padding-right: 20px;
 }
 
-/* Estilos para el contenedor de superposición superior */
 .overlaytop-container {
     position: fixed;
     top: 10vh;
@@ -294,14 +262,12 @@ h2 {
     z-index: 2;
 }
 
-/* Estilos para la superposición superior */
 .overlay-top {
     width: 100%;
     height: 15px;
     z-index: 1;
 }
 
-/* Estilos para el contenedor de superposición inferior */
 .overlaybottom-container {
     position: absolute;
     bottom: 0;
@@ -311,14 +277,12 @@ h2 {
     width: 102%;
 }
 
-/* Estilos para la superposición inferior */
 .overlay-bottom {
     width: 102%;
     height: 15px;
     z-index: 1;
 }
 
-/* Estilos para el enlace activo en el menú */
 .op-menu a.activo {
     color: var(--color3);
     border: 2px solid;
@@ -326,23 +290,15 @@ h2 {
     padding: 5px 10px;
 }
 
-/* Estilos para el contenedor B */
 .contB {
     display: none;
 }
 
-
-/* Gimnasios */
-
-
-
-/* Estilos para el título de la sección */
 .section-title {
     text-align: center;
     margin-bottom: 10px;
 }
 
-/* Estilos para el título h3 */
 h3 {
     font-size: 4em;
     color: var(--color3);
@@ -351,16 +307,14 @@ h3 {
     font-family: Titulo;
 }
 
-/* Estilos para el párrafo parrafo2 */
 .parrafo2 {
     text-align: center;
     color: var(--color1);
-    line-height: 1.1; /* Ajusta este valor para aumentar el espacio entre líneas */
+    line-height: 1.1;
     font-family: Head;
     font-size: 140%;
 }
 
-/* Estilos para el contenedor principal container */
 .container {
     display: flex;
     flex-direction: row;
@@ -370,7 +324,6 @@ h3 {
     position: relative;
 }
 
-/* Estilos para los contenedores internos "item-container" */
 .item-container {
     text-align: center;
     background-color: var(--color3);
@@ -389,11 +342,10 @@ h3 {
     transform: translateY(-7px);
 }
 
-/* Estilos para los títulos h4 en "item-container" */
 .item-container h4 {
     color: var(--color2);
     margin-top: 15%;
-    max-height:80px;
+    max-height: 80px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -401,13 +353,6 @@ h3 {
     font-size: 30px;
 }
 
-/* Estilos para los logos dentro de los contenedores */
-.container-logo {
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
-
-/* Estilos para el párrafo parrafo3 */
 .parrafo3 {
     margin-top: 25px;
     text-align: center;
@@ -416,7 +361,6 @@ h3 {
     font-family: Head;
 }
 
-/* Estilos para el párrafo parrafo3 en "item-container" */
 .item-container .parrafo3 {
     font-size: 110%;
 }
@@ -430,26 +374,23 @@ h3 {
 
 .item-container .parrafo33 {
     font-size: 110%;
-} 
+}
 
-/* Estilos de enlaces */
 a {
     color: var(--color1);
     text-decoration: none;
 }
 
-.a1{
+.a1 {
     color: var(--color2);
     text-decoration: none;
 }
-
 
 a:hover {
     color: var(--color3);
     text-decoration: none;
 }
 
-/* Estilos para el botón boton2 */
 .boton2 {
     margin: 10px auto;
     margin-top: 20%;
@@ -475,7 +416,7 @@ a:hover {
 
 .boton23 {
     margin: 10px auto;
-    margin-top:16%;
+    margin-top: 16%;
     padding: 4px;
     background: var(--color2);
     border-radius: 40px;
@@ -496,15 +437,6 @@ a:hover {
     text-decoration: underline;
 }
 
-
-
-
-
-/* Acceder*/
-
-
-
-/* Estilos para los campos de entrada con los IDs nombre, email y ci */
 #nombre,
 #email,
 #ci {
@@ -515,11 +447,10 @@ a:hover {
     outline: none;
     width: 30vw;
     height: 4vh;
-    margin-bottom: -10px; /* Ajusta el margen inferior según tus necesidades */
+    margin-bottom: -10px;
     color: rgb(58, 58, 58);
 }
 
-/* Estilos para el contenedor principal containerCD */
 .containerCD {
     width: 100vw;
     height: 100vh;
@@ -530,16 +461,14 @@ a:hover {
     align-items: center;
 }
 
-/* Estilos para los contenedores internos containerC y containerD */
 .containerC,
 .containerD {
     display: flex;
     flex-direction: column;
     align-items: left;
-    margin: 10vw; /* Ajusta el margen según tus necesidades */
+    margin: 10vw;
 }
 
-/* Estilos para el contenedorD */
 .containerD {
     color: var(--color3);
     border: 2px solid;
@@ -547,25 +476,21 @@ a:hover {
     padding: 40px;
 }
 
-
-/* Estilos para las etiquetas dentro de containerD */
 .containerD label {
     margin-top: 3vh;
-    margin-bottom: 3vh; /* Ajusta el margen superior e inferior según tus necesidades */
+    margin-bottom: 3vh;
 }
 
-/* Estilos para los campos de entrada dentro de containerD */
 .containerD input {
     width: 100%;
-    margin-bottom: 2vh; /* Ajusta el margen inferior entre los campos de entrada */
+    margin-bottom: 2vh;
 }
 
 .containerD select {
     width: 100%;
-    margin-bottom: 2vh; /* Ajusta el margen inferior entre los campos de entrada */
+    margin-bottom: 2vh;
 }
 
-/* Estilos para el botón boton3 */
 .boton3 {
     margin: 10px auto;
     padding: 4px;
@@ -584,11 +509,6 @@ a:hover {
     color: var(--color4);
 }
 
-
-
-  /*Sobre nosotros*/
-
-/* Estilos para el contenedorE */
 .containerE {
     display: flex;
     position: relative;
@@ -596,7 +516,6 @@ a:hover {
     align-items: center;
 }
 
-/* Estilos para los elementos en item-containerC */
 .item-containerC {
     position: relative;
     width: 20vw;
@@ -606,10 +525,9 @@ a:hover {
     overflow: hidden;
     cursor: pointer;
     border-radius: 40px;
-    margin-top:3vh; /* Agregado un margen superior */
+    margin-top: 3vh;
 }
 
-/* Estilos específicos para novedad1 */
 #novedad1 {
     background-image: url('../img/img_muestra/img/iocno2.png');
     background-size: 50%;
@@ -618,7 +536,6 @@ a:hover {
     margin-top: 20px;
 }
 
-/* Estilos específicos para novedad2 */
 #novedad2 {
     background-image: url('../img/img_muestra/img/iocno3.png');
     background-size: 50%;
@@ -627,7 +544,6 @@ a:hover {
     margin-top: 20px;
 }
 
-/* Estilos específicos para novedad3 */
 #novedad3 {
     background-image: url('../img/img_muestra/img/iocno4.png');
     background-size: 50%;
@@ -635,7 +551,6 @@ a:hover {
     background-position: center center;
 }
 
-/* Estilos para el párrafo5 dentro de item-containerC */
 .parrafo5 {
     position: absolute;
     top: 0;
@@ -652,14 +567,12 @@ a:hover {
     font-weight: bold;
 }
 
-/* Estilos para hover en novedad1, novedad2 y novedad3 */
 #novedad1:hover,
 #novedad2:hover,
 #novedad3:hover {
     background-image: none;
 }
 
-/* Estilos para el párrafo6 dentro de item-containerC */
 .parrafo6 {
     position: absolute;
     width: 100%;
@@ -672,7 +585,6 @@ a:hover {
     font-size: 140%;
 }
 
-/* Estilos para mostrar y ocultar los párrafos al hacer hover en item-containerC */
 .item-containerC:hover .parrafo5 {
     opacity: 1;
     background-image: none;
@@ -683,7 +595,7 @@ a:hover {
 }
 
 .overlaybottom-container2 {
-margin-top: auto;
+    margin-top: auto;
     bottom: 0;
     left: 0;
     display: flex;
@@ -691,9 +603,8 @@ margin-top: auto;
     width: 100%;
 }
 
-/* Estilos para la superposición inferior */
 .overlay-bottom2 {
-    width: 100%; /* Cambiado a 100% para evitar desbordamientos */
+    width: 100%;
     height: 15px;
     z-index: 1;
 }
@@ -715,7 +626,6 @@ margin-top: auto;
     font-family: 'Head';
 }
 
-/* Asegurarse de que el modal esté centrado */
 .modal-dialog-centered {
     display: flex;
     align-items: center;
@@ -734,7 +644,7 @@ margin-top: auto;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     width: 80%;
-    margin: 0 auto; 
+    margin: 0 auto;
     margin-top: 20px;
     overflow: hidden;
 }
@@ -750,13 +660,12 @@ margin-top: auto;
     color: var(--color4);
 }
 
-.tituloo{
-        font-size: 3em;
-        color: var(--color3);
-        text-align: center;
-        font-family: Head;
-        font-weight: bold;
-    
+.tituloo {
+    font-size: 3em;
+    color: var(--color3);
+    text-align: center;
+    font-family: Head;
+    font-weight: bold;
 }
 
 #tabla-asistencia th,
@@ -768,13 +677,13 @@ margin-top: auto;
 
 #tabla-asistencia th {
     font-size: 1.2em;
-    font-family: 'Titulo', sans-serif; /* Asegúrate de tener la fuente 'Titulo' disponible */
+    font-family: 'Titulo', sans-serif;
     color: var(--color3);
 }
 
 #tabla-asistencia td {
     font-size: 1em;
-    font-family: 'Head', sans-serif; /* Asegúrate de tener la fuente 'Head' disponible */
+    font-family: 'Head', sans-serif;
     color: var(--color1);
     font-weight: bold;
 }
@@ -792,5 +701,5 @@ margin-top: auto;
 }
 
 #tabla-asistencia tbody tr:hover {
-    background-color: var(--color5); 
+    background-color: var(--color5);
 }

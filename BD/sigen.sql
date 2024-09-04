@@ -48,10 +48,7 @@ CREATE TABLE evaluaciones (
 
 CREATE TABLE sucursales (
     id_sucursal INT NOT NULL AUTO_INCREMENT,
-    dia DATE NOT NULL,
     capacidad INT NOT NULL,
-    hora_inicio TIME NOT NULL,
-    hora_fin TIME NOT NULL,
     PRIMARY KEY (id_sucursal)
 );
 
@@ -59,6 +56,7 @@ CREATE TABLE planes (
     id_plan INT NOT NULL AUTO_INCREMENT,
     tipo VARCHAR(255) NOT NULL,
     nombre VARCHAR(255) NOT NULL,
+    descripcion VARCHAR(255) NOT NULL,
     PRIMARY KEY (id_plan)
 );
 
@@ -86,13 +84,18 @@ CREATE TABLE horarios (
     PRIMARY KEY (id_horario)
 );
 
+CREATE TABLE estado (
+    id_estado INT NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (id_estado)
+
 -- Relaciones
 CREATE TABLE cliente_estado (
     id_cliente VARCHAR(10) NOT NULL,
     -- Ajustado a VARCHAR(10)
     id_estado INT NOT NULL,
     PRIMARY KEY (id_cliente, id_estado),
-    FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente)
+    FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente),
+    FOREIGN KEY (id_estado) REFERENCES estado (id_estado)
 );
 
 CREATE TABLE cliente_evaluaciones (
@@ -123,8 +126,7 @@ CREATE TABLE cliente_sesion (
 );
 
 CREATE TABLE entrenador_sesion (
-    id_entrenador VARCHAR(10) NOT NULL,
-    -- Ajustado a VARCHAR(10) para coincidir con CI de usuarios
+    id_entrenador VARCHAR(10) NOT NULL
     id_sesion INT NOT NULL,
     PRIMARY KEY (id_entrenador, id_sesion),
     FOREIGN KEY (id_entrenador) REFERENCES usuarios (CI),

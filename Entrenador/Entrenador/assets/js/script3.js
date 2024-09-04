@@ -1,150 +1,175 @@
-let planes = [
-    { id: 1, nombre: 'Plan de Fuerza', objetivo: 'Aumentar fuerza muscular' }
-];
-
-let clientes = [
-    { id: 1, nombre: 'Juan Pérez' },
-    { id: 2, nombre: 'María Gómez' }
-];
-
-let asignaciones = [
-    { clienteId: 1, planId: 1 }
-];
-
 document.addEventListener('DOMContentLoaded', () => {
-    cargarPlanes(); 
-    cargarClientes(); 
-    cargarOpcionesPlanes(); 
-    cargarAsignacionesTabla(); 
-    ocultarModales(); 
-});
+    const planForm = document.getElementById('planForm');
+    const ejercicioForm = document.getElementById('ejercicioForm');
+    const planList = document.getElementById('planList');
+    const modalAsignarPlan = document.getElementById('modal-asignar-plan');
+    const modalCompatibilidad = document.getElementById('modal-tabla-compatibilidad');
+    const cerrarModalAsignarBtn = document.getElementById('cerrar-modal-asignar-btn');
+    const cerrarModalCompatibilidadBtn = document.getElementById('cerrar-modal-compatibilidad-btn');
+    const asignarPlanForm = document.getElementById('asignar-plan-form');
 
-function ocultarModales() {
-    document.getElementById('modal-asignar-plan').style.display = 'none';
-}
+    modalAsignarPlan.style.display = 'none';
+    modalCompatibilidad.style.display = 'none';
 
-function cargarPlanes() {
-    const listaPlanes = document.getElementById('planes-list');
-    listaPlanes.innerHTML = ''; 
-    
-    planes.forEach(plan => {
-        const li = document.createElement('li');
-        li.textContent = `${plan.nombre} - ${plan.objetivo}`;
-        li.dataset.id = plan.id;
-        li.addEventListener('click', () => cargarFormularioPlan(plan));
-        listaPlanes.appendChild(li);
+    let planes = [];
+
+    // Manejo de envío del formulario de planes
+    planForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nombrePlan = document.getElementById('nombre-plan').value;
+        const objetivoPlan = document.getElementById('objetivo-plan').value;
+
+        const planExistente = planes.find(plan => plan.nombre === nombrePlan);
+        if (planExistente) {
+            planExistente.objetivo = objetivoPlan;
+        } else {
+            planes.push({ nombre: nombrePlan, objetivo: objetivoPlan, ejercicios: [] });
+        }
+        renderPlanes();
+        updateSelectOptions();
+        planForm.reset();
     });
 
-
-    cargarOpcionesPlanes();
-}
-
-
-function cargarFormularioPlan(plan) {
-    document.getElementById('nombre-plan').value = plan.nombre;
-    document.getElementById('objetivo-plan').value = plan.objetivo;
-    document.getElementById('agregar-plan-btn').dataset.id = plan.id; 
-}
-
-function cargarOpcionesPlanes() {
-    const selectPlanes = document.getElementById('plan-select');
-    selectPlanes.innerHTML = ''; 
-
-    planes.forEach(plan => {
-        const option = document.createElement('option');
-        option.value = plan.id;
-        option.textContent = plan.nombre;
-        selectPlanes.appendChild(option);
+    // Manejo del botón de eliminar plan
+    document.getElementById('eliminar-plan-btn').addEventListener('click', () => {
+        const nombrePlan = document.getElementById('nombre-plan').value;
+        planes = planes.filter(plan => plan.nombre !== nombrePlan);
+        renderPlanes();
+        updateSelectOptions();
+        planForm.reset();
     });
-}
 
-function cargarClientes() {
-    const selectClientes = document.getElementById('cliente-select');
-    selectClientes.innerHTML = ''; 
+    // Manejo del botón de agregar ejercicio
+    document.getElementById('agregar-ejercicio-btn').addEventListener('click', () => {
+        const nombreEjercicio = document.getElementById('ejercicio-nombre').value;
+        const detalleEjercicio = document.getElementById('ejercicio-detalle').value;
+        const planAsignado = document.getElementById('plan-ejercicio-select').value;
 
-    clientes.forEach(cliente => {
-        const option = document.createElement('option');
-        option.value = cliente.id;
-        option.textContent = cliente.nombre;
-        selectClientes.appendChild(option);
+        const plan = planes.find(plan => plan.nombre === planAsignado);
+        if (plan) {
+            const ejercicioExistente = plan.ejercicios.find(ej => ej.nombre === nombreEjercicio);
+            if (ejercicioExistente) {
+                ejercicioExistente.detalle = detalleEjercicio;
+            } else {
+                plan.ejercicios.push({ nombre: nombreEjercicio, detalle: detalleEjercicio });
+            }
+            renderPlanes();
+        }
+        ejercicioForm.reset();
     });
-}
 
+    // Manejo del botón de eliminar ejercicio
+    document.getElementById('eliminar-ejercicio-btn').addEventListener('click', () => {
+        const nombreEjercicio = document.getElementById('ejercicio-nombre').value;
+        const planAsignado = document.getElementById('plan-ejercicio-select').value;
 
-document.getElementById('plan-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const id = document.getElementById('agregar-plan-btn').dataset.id;
-    const nombre = document.getElementById('nombre-plan').value;
-    const objetivo = document.getElementById('objetivo-plan').value;
+        const plan = planes.find(plan => plan.nombre === planAsignado);
+        if (plan) {
+            plan.ejercicios = plan.ejercicios.filter(ej => ej.nombre !== nombreEjercicio);
+            renderPlanes();
+        }
+        ejercicioForm.reset();
+    });
 
-    if (id) {
+    // Renderizar la lista de planes en la tabla
+    function renderPlanes() {
+        planList.innerHTML = '';
+        planes.forEach(plan => {
+            const row = document.createElement('tr');
+            
+            row.innerHTML = `
+                <td>${plan.nombre}</td>
+                <td>${plan.objetivo}</td>
+                <td>${plan.ejercicios.map(ej => ej.nombre).join(', ')}</td>
+            `;
 
-        const plan = planes.find(p => p.id == id);
-        plan.nombre = nombre;
-        plan.objetivo = objetivo;
-    } else {
+            // Evento para cargar datos en el formulario al hacer clic en un plan
+            row.addEventListener('click', () => {
+                document.getElementById('nombre-plan').value = plan.nombre;
+                document.getElementById('objetivo-plan').value = plan.objetivo;
+                updateEjercicioForm(plan);
+            });
 
-        const nuevoPlan = {
-            id: Date.now(), 
-            nombre,
-            objetivo
-        };
-        planes.push(nuevoPlan); 
+            planList.appendChild(row);
+        });
     }
 
-    cargarPlanes(); 
-    e.target.reset(); 
-    delete document.getElementById('agregar-plan-btn').dataset.id; 
-});
+    // Función para actualizar el formulario de ejercicios con datos del plan seleccionado
+    function updateEjercicioForm(plan) {
+        const planEjercicioSelect = document.getElementById('plan-ejercicio-select');
+        planEjercicioSelect.value = plan.nombre;
 
-
-document.getElementById('eliminar-plan-btn').addEventListener('click', () => {
-    const id = document.getElementById('agregar-plan-btn').dataset.id;
-    if (id) {
-        planes = planes.filter(p => p.id != id); 
-        cargarPlanes(); 
-        document.getElementById('plan-form').reset();
-        delete document.getElementById('agregar-plan-btn').dataset.id; 
+        const ejercicios = plan.ejercicios;
+        if (ejercicios.length > 0) {
+            document.getElementById('ejercicio-nombre').value = ejercicios[0].nombre;
+            document.getElementById('ejercicio-detalle').value = ejercicios[0].detalle;
+        } else {
+            ejercicioForm.reset();
+        }
     }
-});
 
-document.getElementById('asignar-plan-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    const clienteId = parseInt(document.getElementById('cliente-select').value);
-    const planId = parseInt(document.getElementById('plan-select').value);
-
-    asignaciones.push({ clienteId, planId });
-    
-    cargarAsignacionesTabla(); 
-    e.target.reset(); 
-});
-
-
-function cargarAsignacionesTabla() {
-    const tablaAsignacionesBody = document.querySelector('#tabla-asignaciones tbody');
-    tablaAsignacionesBody.innerHTML = '';
-
-    asignaciones.forEach(asignacion => {
-        const cliente = clientes.find(c => c.id === asignacion.clienteId);
-        const plan = planes.find(p => p.id === asignacion.planId);
-        const tr = document.createElement('tr');
-        tr.innerHTML = `<td>${cliente.nombre}</td><td>${plan.nombre}</td>`;
-        tablaAsignacionesBody.appendChild(tr);
+    // Manejo de apertura y cierre de modales
+    document.getElementById('abrir-modal-asignar-btn').addEventListener('click', () => {
+        modalAsignarPlan.style.display = 'block';
+        updateSelectOptions();
     });
-}
 
-document.getElementById('abrir-modal-asignar-btn').addEventListener('click', () => {
-    document.getElementById('modal-asignar-plan').style.display = 'block';
-    cargarOpcionesPlanes(); 
-    cargarAsignacionesTabla(); 
-});
+    cerrarModalAsignarBtn.addEventListener('click', () => {
+        modalAsignarPlan.style.display = 'none';
+    });
 
-document.getElementById('cerrar-modal-asignar-btn').addEventListener('click', () => {
-    document.getElementById('modal-asignar-plan').style.display = 'none';
-});
+    document.getElementById('ver-tabla-compatibilidad-btn').addEventListener('click', () => {
+        modalCompatibilidad.style.display = 'block';
+    });
 
-window.addEventListener('click', (event) => {
-    if (event.target === document.getElementById('modal-asignar-plan')) {
-        document.getElementById('modal-asignar-plan').style.display = 'none';
+    cerrarModalCompatibilidadBtn.addEventListener('click', () => {
+        modalCompatibilidad.style.display = 'none';
+    });
+
+    // Manejo del formulario de asignación de planes a clientes
+    asignarPlanForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const cliente = document.getElementById('cliente-select').value;
+        const plan = document.getElementById('plan-select').value;
+
+        const asignacion = document.createElement('tr');
+        asignacion.innerHTML = `
+            <td>${cliente}</td>
+            <td>${plan}</td>
+        `;
+        document.getElementById('tabla-asignaciones').querySelector('tbody').appendChild(asignacion);
+
+        modalAsignarPlan.style.display = 'none';
+    });
+
+    // Actualiza las opciones de selección de clientes y planes
+    function updateSelectOptions() {
+        const clienteSelect = document.getElementById('cliente-select');
+        const planSelect = document.getElementById('plan-select');
+        const planEjercicioSelect = document.getElementById('plan-ejercicio-select');
+
+        clienteSelect.innerHTML = ''; 
+        planSelect.innerHTML = ''; 
+        planEjercicioSelect.innerHTML = ''; 
+
+        const clientes = ['Cliente 1', 'Cliente 2', 'Cliente 3'];
+        clientes.forEach(cliente => {
+            const option = document.createElement('option');
+            option.value = cliente;
+            option.textContent = cliente;
+            clienteSelect.appendChild(option);
+        });
+
+        planes.forEach(plan => {
+            const optionPlan = document.createElement('option');
+            optionPlan.value = plan.nombre;
+            optionPlan.textContent = plan.nombre;
+            planSelect.appendChild(optionPlan);
+
+            const optionEjercicio = document.createElement('option');
+            optionEjercicio.value = plan.nombre;
+            optionEjercicio.textContent = plan.nombre;
+            planEjercicioSelect.appendChild(optionEjercicio);
+        });
     }
 });

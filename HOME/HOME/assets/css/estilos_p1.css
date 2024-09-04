@@ -408,8 +408,7 @@ a:hover {
     text-decoration: underline;
 }
 
-#nombre,
-#email,
+#password,
 #ci {
     background: transparent;
     padding: 5px;

@@ -241,51 +241,29 @@
         </div>
 
 
-            <div class="containerD">
-
-                <label>Nombre y Apellido</label>
-            <input  type="text"
-                    id="nombre"
-                    name="nombre"
-                    minlength="6"
-                    maxlength="30"
-                    onkeydown="noEspacios(event)"
-                    placeholder="Alejandro Maneiro"
-                    required>
-
-            <label>Correo Electronico</label>
-            <input type="email"
-                   id="email"
-                   name="email"
-                   minlength="6"
-                   onkeydown="noEspacios(event)"
-                   placeholder="alejandromaneiro@mail.com"
-                   required>
-           
+        <div class="containerD">
             <label>C.I.</label>
-            <input type="ci"
-                    id="ci"
-                    name="ci"
-                    maxlength="8"
-                    onkeydown="noEspacios(event)"
-                    placeholder="66666669"
-                    required>
-
-             <label>Tipo de Usuario</label>
-                <select id="tipoUsuario" name="tipoUsuario" required>
-                    <option value="">Seleccione un tipo de usuario</option>
-                    <option value="cliente">Usuario Cliente</option>
-                    <option value="administrativo">Usuario Administrativo</option>
-                    <option value="avanzado">Usuario Avanzado</option>
-                    <option value="entrenador">Entrenador</option>
-                    <option value="seleccionador">Usuario Seleccionador</option>
-                    <option value="adminTI">Usuario Administrador TI</option>
-                </select>
-
-
-                    <div class="enlaces">
-                        <div class="boton3">Acceder!</div>
-                    </div>
+            <input type="text"
+                   id="ci"
+                   name="ci"
+                   maxlength="8"
+                   onkeydown="noEspacios(event)"
+                   placeholder="66666669"
+                   required>
+        
+            <label>Contraseña</label>
+            <input type="password"
+                   id="password"
+                   name="password"
+                   minlength="6"
+                   placeholder="Ingrese su contraseña"
+                   required>
+        
+            <div class="enlaces">
+                <div class="boton3">Acceder!</div>
+            </div>
+        </div>
+        
             </div>
         </div>
 

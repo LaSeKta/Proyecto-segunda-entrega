@@ -580,175 +580,102 @@ a:hover {
     z-index: 1;
 }
 
-.evolucion-container {
+.gestion-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: flex-start;
     width: 100%;
     padding: 20px;
     gap: 20px;
 }
 
-.evolucion-form-container {
-    flex: 0 0 30%;
-    background-color: var(--color2);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    margin-left: 10%;
-}
-
-.evolucion-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.evolucion-form .form-group {
-    margin-bottom: 15px;
-}
-
-.evolucion-form label {
-    font-family: Titulo;
-    color: var(--color3);
-    margin-bottom: 5px;
-}
-
-.evolucion-form input,
-.evolucion-form select,
-.evolucion-form button {
-    width: 100%;
-    padding: 10px;
-    font-family: Head;
-    font-size: 1em;
-    margin-top: 5px;
-    border: 1px solid var(--color1);
-    border-radius: 5px;
-}
-
-.evolucion-form button {
-    background-color: var(--color3);
-    color: var(--color4);
-    cursor: pointer;
-    font-weight: bold;
-    border: none;
-    margin-top: 10px;
-}
-
-.evolucion-form button:hover {
-    background-color: var(--color5);
-}
-
-.evolucion-list-container {
-    flex: 1;
-}
-
-.evolucion-table {
-    width: 80%;
-    border-collapse: collapse;
-    background-color: var(--color2);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-#planes-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
-    padding: 20px;
-    gap: 20px;
-}
-
-#formulario-plan {
-    flex: 0 0 30%;
-    background-color: var(--color2);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-#plan-form {
-    display: flex;
-    flex-direction: column;
-}
-
-#plan-form label {
-    font-family: Titulo;
-    color: var(--color3);
-    margin-bottom: 5px;
-}
-
-#plan-form input,
-#plan-form select,
-#plan-form button {
-    width: 100%;
-    padding: 10px;
-    font-family: Head;
-    font-size: 1em;
-    margin-top: 5px;
-    border: 1px solid var(--color1);
-    border-radius: 5px;
-}
-
-#plan-form button {
-    background-color: var(--color3);
-    color: var(--color4);
-    cursor: pointer;
-    font-weight: bold;
-    border: none;
-    margin-top: 10px;
-}
-
-#plan-form button:hover {
-    background-color: var(--color5);
-}
-
-#lista-planes {
+.gestion-form-container {
     flex: 1;
     background-color: var(--color2);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    max-height: 600px;
-    overflow-y: auto;
-    width: 100%;
-    box-sizing: border-box;
-    margin-left: 5%;
 }
 
-#lista-planes h3 {
+.gestion-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.gestion-form h3 {
     margin: 0 0 15px 0;
     font-family: Titulo;
     color: var(--color3);
+    text-align: center;
 }
 
-#planes-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+.form-group {
+    margin-bottom: 15px;
 }
 
-#planes-list li {
-    padding: 10px;
-    background-color: var(--color4);
+.form-group label {
+    font-family: Titulo;
     color: var(--color3);
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 100%;
-    box-sizing: border-box;
+    margin-bottom: 5px;
 }
 
-#planes-list li:hover {
+.form-group input,
+.form-group button {
+    width: 100%;
+    padding: 10px;
+    font-family: Head;
+    font-size: 1em;
+    border: 1px solid var(--color1);
+    border-radius: 5px;
+}
+
+.form-group button {
     background-color: var(--color3);
     color: var(--color4);
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+    background-color: var(--color5);
+}
+
+.gestion-table-container {
+    flex: 2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    background-color: var(--color4);
+}
+
+.gestion-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.gestion-table th,
+.gestion-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid var(--color1);
+}
+
+.gestion-table th {
+    background-color: var(--color3);
+    color: var(--color4);
+}
+
+.gestion-table tr:nth-child(even) {
+    background-color: var(--color2);
+}
+
+.gestion-table tr:hover {
+    background-color: var(--color5);
+    color: var(--color2);
+    cursor: pointer;
 }
 
 .modal {
@@ -768,110 +695,120 @@ a:hover {
     padding: 20px;
     border: 1px solid var(--color1);
     width: 70%;
-    height: 70%;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.close-modal {
-    color: var(--color3);
+#modal-asignar-plan .modal-content {
+    background-color: #f9f9f9;
+    margin: 10% auto;
+    padding: 20px 30px;
+    border: 2px solid var(--color1);
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.asignar-plan-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.asignar-plan-form {
+    flex: 1;
+    padding-right: 20px;
+    border-right: 2px solid var(--color1);
+}
+
+.asignaciones-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+#modal-asignar-plan .close-modal {
+    color: #444;
     float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+    margin: -10px -10px 0 0;
+    transition: color 0.3s;
 }
 
-.close-modal:hover,
-.close-modal:focus {
-    color: var(--color5);
+#modal-asignar-plan .close-modal:hover,
+#modal-asignar-plan .close-modal:focus {
+    color: #e74c3c;
     text-decoration: none;
     cursor: pointer;
 }
 
-.modal-content h3 {
-    margin-top: 0;
+#modal-asignar-plan form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#modal-asignar-plan label {
+    font-weight: bold;
+    color: var(--color3);
+}
+
+#modal-asignar-plan select,
+#modal-asignar-plan button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color1);
+    font-family: Head;
+    font-size: 1em;
+}
+
+#modal-asignar-plan button {
+    background-color: var(--color3);
+    color: var(--color4);
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+#modal-asignar-plan button:hover {
+    background-color: var(--color5);
 }
 
 .tabla-asignaciones-container {
-    max-height: 600px;
+    max-height: 300px;
     overflow-y: auto;
-    margin-top: 15px;
-    border: 1px solid var(--color1);
-    border-radius: 5px;
-    background-color: var(--color4);
 }
 
-#tabla-asignaciones {
+.tabla-asignaciones-container table {
     width: 100%;
     border-collapse: collapse;
 }
 
-#tabla-asignaciones th, #tabla-asignaciones td {
-    border: 1px solid var(--color1);
+.tabla-asignaciones-container th,
+.tabla-asignaciones-container td {
     padding: 10px;
+    border: 1px solid var(--color1);
     text-align: left;
 }
 
-#tabla-asignaciones th {
+.tabla-asignaciones-container th {
     background-color: var(--color3);
     color: var(--color4);
 }
 
-#tabla-asignaciones tr:nth-child(even) {
-    background-color: var(--color4);
+.tabla-asignaciones-container tr:nth-child(even) {
+    background-color: var(--color2);
 }
 
-#tabla-asignaciones tr:hover {
-    background-color: var(--color5);
-    color: var(--color2);
-}
 
-#asignar-plan-form {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-    margin: 20px auto;
-    justify-content: center;
-    width: auto;
-}
-
-#asignar-plan-form label {
-    font-family: Titulo;
-    color: var(--color3);
-    font-size: 0.9em;
-    margin: 0 5px 0 0;
-    white-space: nowrap;
-}
-
-#asignar-plan-form select {
-    width: auto;
-    padding: 5px 10px;
-    font-family: Head;
-    font-size: 0.9em;
-    border: 1px solid var(--color1);
-    border-radius: 5px;
-    background-color: var(--color4);
-    color: var(--color3);
-    margin: 0 10px;
-}
-
-#asignar-plan-form button {
-    background-color: var(--color3);
-    color: var(--color4);
-    padding: 5px 10px;
-    font-family: Head;
-    font-size: 0.9em;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#asignar-plan-form button:hover {
-    background-color: var(--color5);
-}
 
 #evolucion-container {
     padding: 20px;

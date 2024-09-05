@@ -139,7 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         document.getElementById('tabla-asignaciones').querySelector('tbody').appendChild(asignacion);
 
-        modalAsignarPlan.style.display = 'none';
+        // Esta línea ha sido comentada para evitar que se cierre el modal
+        // modalAsignarPlan.style.display = 'none';
     });
 
     // Actualiza las opciones de selección de clientes y planes

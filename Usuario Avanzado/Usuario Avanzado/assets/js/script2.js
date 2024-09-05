@@ -4,6 +4,8 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
     
     // Obtener los valores del formulario
     const name = document.getElementById('userName').value;
+    const surname = document.getElementById('userSurname').value;
+    const ci = document.getElementById('userCI').value;
     const email = document.getElementById('userEmail').value;
     const phone = document.getElementById('userPhone').value;
     const plan = document.getElementById('userPlan').value;
@@ -13,6 +15,8 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
     const newUserRow = document.createElement('tr');
     newUserRow.innerHTML = `
         <td>${name}</td>
+        <td>${surname}</td>
+        <td>${ci}</td>
         <td>${email}</td>
         <td>${phone}</td>
         <td>${plan}</td>

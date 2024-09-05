@@ -95,7 +95,7 @@
         <section id="Horarios">
             <h2 class="tituloo" style="color: var(--color3);">Calificación y Evolución</h2>
             <div class="evolucion-container">
-
+        
                 <div class="evolucion-form-container">
                     <form id="evolucionForm" class="evolucion-form">
                         <div class="form-group">
@@ -106,15 +106,79 @@
                             <label for="clientProgress">Progreso (%):</label>
                             <input type="number" id="clientProgress" name="clientProgress" min="0" max="100" required>
                         </div>
-                        <div class="form-group">
-                            <label for="clientRating">Calificación del Desempeño:</label>
-                            <select id="clientRating" name="clientRating">
-                                <option value="Excelente">Excelente</option>
-                                <option value="Bueno">Bueno</option>
-                                <option value="Regular">Regular</option>
-                                <option value="Deficiente">Deficiente</option>
-                            </select>
-                        </div>
+        
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="agendaCompliance">Cumplimiento con la agenda:</label>
+                                <select id="agendaCompliance" name="agendaCompliance">
+                                    <option value="Excelente">Excelente</option>
+                                    <option value="Bueno">Bueno</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Deficiente">Deficiente</option>
+                                </select>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="anaerobicResistance">Resistencia anaeróbica:</label>
+                                <select id="anaerobicResistance" name="anaerobicResistance">
+                                    <option value="Excelente">Excelente</option>
+                                    <option value="Bueno">Bueno</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Deficiente">Deficiente</option>
+                                </select>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="muscleStrength">Fuerza muscular:</label>
+                                <select id="muscleStrength" name="muscleStrength">
+                                    <option value="Excelente">Excelente</option>
+                                    <option value="Bueno">Bueno</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Deficiente">Deficiente</option>
+                                </select>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="muscleResistance">Resistencia muscular:</label>
+                                <select id="muscleResistance" name="muscleResistance">
+                                    <option value="Excelente">Excelente</option>
+                                    <option value="Bueno">Bueno</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Deficiente">Deficiente</option>
+                                </select>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="flexibility">Flexibilidad:</label>
+                                <select id="flexibility" name="flexibility">
+                                    <option value="Excelente">Excelente</option>
+                                    <option value="Bueno">Bueno</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Deficiente">Deficiente</option>
+                                </select>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="monotonyResistance">Resistencia a la monotonía:</label>
+                                <select id="monotonyResistance" name="monotonyResistance">
+                                    <option value="Excelente">Excelente</option>
+                                    <option value="Bueno">Bueno</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Deficiente">Deficiente</option>
+                                </select>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="resilience">Resiliencia:</label>
+                                <select id="resilience" name="resilience">
+                                    <option value="Excelente">Excelente</option>
+                                    <option value="Bueno">Bueno</option>
+                                    <option value="Regular">Regular</option>
+                                    <option value="Deficiente">Deficiente</option>
+                                </select>
+                            </div>
+                        </fieldset>
+        
                         <div class="form-group">
                             <button type="submit">Registrar Evolución</button>
                         </div>
@@ -130,16 +194,18 @@
                             <tr class="tablajeje">
                                 <th>Nombre del Cliente</th>
                                 <th>Progreso (%)</th>
-                                <th>Calificación</th>
+                                <th>Calificaciones</th>
                                 <th>Alertas</th>
                             </tr>
                         </thead>
                         <tbody id="clientEvolutions">
+                            <!-- Aquí se mostrarán las entradas registradas -->
                         </tbody>
                     </table>
                 </div>
             </div>
         </section>
+        
         
 
         <section id="Gimnasios">
@@ -216,7 +282,7 @@
                     <span class="close-modal" id="cerrar-modal-asignar-btn">&times;</span>
                     <div class="asignar-plan-container">
                         <div class="asignar-plan-form">
-                            <h3>Asignar Plan a Cliente</h3>
+                            <h3 style="margin-top: 0%;">Asignar Plan a Cliente</h3>
                             <form id="asignar-plan-form">
                                 <label for="cliente-select">Seleccionar Cliente:</label>
                                 <select id="cliente-select" name="cliente-select" required>
@@ -231,7 +297,7 @@
                         </div>
             
                         <div class="asignaciones-list">
-                            <h3 style="color: var(--color3);">Asignaciones de Planes a Clientes</h3>
+                            <h3 style="color: var(--color3); margin-top: 0%;">Asignaciones de Planes a Clientes</h3>
                             <div class="tabla-asignaciones-container">
                                 <table id="tabla-asignaciones">
                                     <thead>

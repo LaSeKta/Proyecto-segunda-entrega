@@ -53,16 +53,21 @@ function mostrarModalConGrafico(deportista, progreso) {
     const ctx = document.getElementById('grafico-comparacion').getContext('2d');
 
     // Calcular el promedio del progreso de todos los deportistas
-    const promedioProgreso = progresos.reduce((acc, curr) => acc + curr, 0) / progresos.length;
+    const promedioProgreso = progresos.length > 0 ? progresos.reduce((acc, curr) => acc + curr, 0) / progresos.length : 0;
 
     // Mostrar modal
     modal.style.display = 'block';
 
+    // Destruir cualquier gráfica anterior antes de crear una nueva
+    if (window.chartInstance) {
+        window.chartInstance.destroy();
+    }
+
     // Crear gráfica de comparación usando Chart.js
-    new Chart(ctx, {
+    window.chartInstance = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: [deportista, 'Promedio Club'],
+            labels: [deportista, 'Promedio global'],
             datasets: [{
                 label: 'Progreso',
                 data: [progreso, promedioProgreso.toFixed(2)], // Mostrar el progreso y el promedio calculado
@@ -105,7 +110,3 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 };
-
-
-
-

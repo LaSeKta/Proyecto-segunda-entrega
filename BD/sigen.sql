@@ -20,7 +20,6 @@ CREATE TABLE personas (
 
 CREATE TABLE clientes (
     id_cliente VARCHAR(10) NOT NULL,
-    -- Cambiado de INT a VARCHAR(10) para coincidir con CI
     alertas INT NOT NULL,
     motivo_inscripcion VARCHAR(255) NOT NULL,
     PRIMARY KEY (id_cliente),
@@ -31,7 +30,6 @@ CREATE TABLE pagos (
     id_pago INT NOT NULL AUTO_INCREMENT,
     
     id_cliente VARCHAR(10) NOT NULL,
-    -- Ajustado a VARCHAR(10)
     PRIMARY KEY (id_pago),
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente)
 );
@@ -41,7 +39,6 @@ CREATE TABLE evaluaciones (
     item_evaluacion VARCHAR(255) NOT NULL,
     nota_max INT NOT NULL,
     id_cliente VARCHAR(10) NOT NULL,
-    -- Ajustado a VARCHAR(10)
     PRIMARY KEY (id_evaluacion),
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente)
 );
@@ -91,7 +88,6 @@ CREATE TABLE estado (
 -- Relaciones
 CREATE TABLE cliente_estado (
     id_cliente VARCHAR(10) NOT NULL,
-    -- Ajustado a VARCHAR(10)
     id_estado INT NOT NULL,
     PRIMARY KEY (id_cliente, id_estado),
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente),
@@ -110,7 +106,6 @@ CREATE TABLE cliente_evaluaciones (
 CREATE TABLE cliente_deporte (
     id_deporte INT NOT NULL,
     id_cliente VARCHAR(10) NOT NULL,
-    -- Ajustado a VARCHAR(10)
     PRIMARY KEY (id_deporte, id_cliente),
     FOREIGN KEY (id_deporte) REFERENCES planes (id_plan),
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente)
@@ -119,7 +114,6 @@ CREATE TABLE cliente_deporte (
 CREATE TABLE cliente_sesion (
     id_sesion INT NOT NULL,
     id_cliente VARCHAR(10) NOT NULL,
-    -- Ajustado a VARCHAR(10)
     PRIMARY KEY (id_sesion, id_cliente),
     FOREIGN KEY (id_sesion) REFERENCES sesiones (id_sesion),
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente)
@@ -135,7 +129,6 @@ CREATE TABLE entrenador_sesion (
 
 CREATE TABLE entrenador_horario (
     id_entrenador VARCHAR(10) NOT NULL,
-    -- Ajustado a VARCHAR(10) para coincidir con CI de usuarios
     id_horario INT NOT NULL,
     PRIMARY KEY (id_entrenador, id_horario),
     FOREIGN KEY (id_entrenador) REFERENCES usuarios (CI),
@@ -166,3 +159,4 @@ CREATE TABLE cliente_pago (
     FOREIGN KEY (id_pago) REFERENCES pagos (id_pago),
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente)
 );
+

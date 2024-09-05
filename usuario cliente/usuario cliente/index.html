@@ -239,68 +239,54 @@
         </section>        
 
 
-<section id="Gimnasios">
-    <div class="dashboard-section">
-        <div class="dashboard-container">
-            <div class="dashboard-card">
-                <h3>Progreso General</h3>
-                <canvas id="general-progress-chart"></canvas>
+        <section id="Gimnasios">
+            <h2 class="section-title">Consultar Progreso</h2>
+            <div id="gimnasios-container">
+                <table id="tabla-gimnasios">
+                    <thead>
+                        <tr>
+                            <th>CI del Usuario</th>
+                            <th>Progreso</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>12345678</td> <!-- Ajusta con la CI del usuario real -->
+                            <td>75%</td> <!-- Ajusta con el progreso real -->
+                            <td><button class="acciones-btn" onclick="abrirModal()">Ver Dashboard</button></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="dashboard-card">
-                <h3>Resistencia</h3>
-                <canvas id="resistance-chart"></canvas>
+        </section>
+        
+        <div id="modal-dashboard" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="cerrarModal()">&times;</span>
+                <h2 style="color: var(--color3);">Dashboard de Desempeño</h2>
+                <div id="dashboard-content">
+                    <div class="chart-container">
+                        <h3 style="color: var(--color3);">Progreso General</h3>
+                        <canvas id="general-progress-chart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3 style="color: var(--color3);">Resistencia</h3>
+                        <canvas id="resistance-chart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3 style="color: var(--color3);">Fuerza Muscular</h3>
+                        <canvas id="muscle-strength-chart"></canvas>
+                    </div>
+                    <div class="chart-container">
+                        <h3 style="color: var(--color3);">Cumplimiento de Ejercicios</h3>
+                        <canvas id="exercise-compliance-chart"></canvas>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="dashboard-container">
-            <div class="dashboard-card">
-                <h3>Fuerza Muscular</h3>
-                <canvas id="muscle-strength-chart"></canvas>
-            </div>
-            <div class="dashboard-card">
-                <h3>Cumplimiento de Ejercicios</h3>
-                <canvas id="exercise-compliance-chart"></canvas>
-            </div>
-        </div>
-    </div>
+        
 
-    <div class="container-right-top-gimnasio">
-
-        <canvas id="progress-chart"></canvas>
-    </div>
-    <div class="container-right-bottom-gimnasio">
-        <table id="muscle-strength-table">
-            <thead>
-                <tr>
-                    <th>Ejercicio</th>
-                    <th>Resistencia (kg)</th>
-                    <th>Fuerza Muscular (%)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Sentadillas</td>
-                    <td>80</td>
-                    <td>85</td>
-                </tr>
-                <tr>
-                    <td>Press de Banca</td>
-                    <td>100</td>
-                    <td>90</td>
-                </tr>
-                <tr>
-                    <td>Remo con Barra</td>
-                    <td>60</td>
-                    <td>80</td>
-                </tr>
-                <tr>
-                    <td>Press Militar</td>
-                    <td>50</td>
-                    <td>75</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
 
         
         
@@ -340,6 +326,7 @@
         <script src="assets/js/script.js"></script>
         <script src="assets/js/script2.js"></script>
         <script src="assets/js/script3.js"></script>
+        <script src="assets/js/script4.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 

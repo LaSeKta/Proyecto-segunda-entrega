@@ -1,6 +1,6 @@
-CREATE DATABASE sigen;
+CREATE DATABASE sekta;
 
-USE sigen;
+USE sekta;
 
 CREATE TABLE usuarios (
     CI VARCHAR(10) NOT NULL,
@@ -28,7 +28,6 @@ CREATE TABLE clientes (
 
 CREATE TABLE pagos (
     id_pago INT NOT NULL AUTO_INCREMENT,
-    
     id_cliente VARCHAR(10) NOT NULL,
     PRIMARY KEY (id_pago),
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente)
@@ -84,6 +83,7 @@ CREATE TABLE horarios (
 CREATE TABLE estado (
     id_estado INT NOT NULL AUTO_INCREMENT,
     PRIMARY KEY (id_estado)
+);
 
 -- Relaciones
 CREATE TABLE cliente_estado (
@@ -120,7 +120,7 @@ CREATE TABLE cliente_sesion (
 );
 
 CREATE TABLE entrenador_sesion (
-    id_entrenador VARCHAR(10) NOT NULL
+    id_entrenador VARCHAR(10) NOT NULL,
     id_sesion INT NOT NULL,
     PRIMARY KEY (id_entrenador, id_sesion),
     FOREIGN KEY (id_entrenador) REFERENCES usuarios (CI),
@@ -159,4 +159,3 @@ CREATE TABLE cliente_pago (
     FOREIGN KEY (id_pago) REFERENCES pagos (id_pago),
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente)
 );
-

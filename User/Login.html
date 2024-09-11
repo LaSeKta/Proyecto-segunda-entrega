@@ -5,28 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - S.I.G.EN</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="container mt-5">
-        <h2>Iniciar Sesión en S.I.G.EN</h2>
-        <div id="message-container" class="mb-3"></div>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="ci">C.I.</label>
-                <input type="text" class="form-control" id="ci" name="ci" placeholder="Ingrese su C.I." required>
+    <div class="login-container">
+        <div class="login-card">
+            <h2>Iniciar Sesión en S.I.G.EN</h2>
+            <div id="message-container" class="mb-3"></div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="ci">C.I.</label>
+                    <input type="text" class="form-control" id="ci" name="ci" maxlength="8" placeholder="Ingrese su C.I." required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" class="form-control" id="password" name="password" minlength="6" placeholder="Ingrese su contraseña" required>
+                </div>
+                <button type="submit" class="login-btn">Iniciar Sesión</button>
+            </form>
+            <div class="footer">
+                <p>¿No tienes una cuenta? <a href="register.html">Regístrate aquí</a></p>
             </div>
-            <div class="form-group">
-                <label for="password">Contraseña</label>
-                <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su contraseña" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-        </form>
+        </div>
     </div>
-    
+
     <script src="../assets/jquery-3.7.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
-
     <script src="assets/js/Login.js"></script>
 </body>
 </html>

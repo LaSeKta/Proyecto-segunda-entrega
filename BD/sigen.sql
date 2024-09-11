@@ -4,7 +4,7 @@ USE sekta;
 
 CREATE TABLE usuarios (
     CI VARCHAR(10) NOT NULL,
-    contrasena VARCHAR(20) NOT NULL,
+    contrasena VARCHAR(255) NOT NULL,
     id_rol INT NOT NULL,
     PRIMARY KEY (CI)
 );
@@ -16,6 +16,13 @@ CREATE TABLE personas (
     email VARCHAR(100) NOT NULL,
     PRIMARY KEY (id_persona),
     FOREIGN KEY (id_persona) REFERENCES usuarios (CI)
+);
+
+CREATE TABLE entrenador (
+    id_entrenador VARCHAR(10) NOT NULL,
+    PRIMARY KEY (id_entrenador),
+    FOREIGN KEY (id_entrenador) REFERENCES personas (id_persona)
+
 );
 
 CREATE TABLE clientes (
@@ -123,7 +130,7 @@ CREATE TABLE entrenador_sesion (
     id_entrenador VARCHAR(10) NOT NULL,
     id_sesion INT NOT NULL,
     PRIMARY KEY (id_entrenador, id_sesion),
-    FOREIGN KEY (id_entrenador) REFERENCES usuarios (CI),
+    FOREIGN KEY (id_entrenador) REFERENCES entrenador (id_entrenador),
     FOREIGN KEY (id_sesion) REFERENCES sesiones (id_sesion)
 );
 
@@ -131,7 +138,7 @@ CREATE TABLE entrenador_horario (
     id_entrenador VARCHAR(10) NOT NULL,
     id_horario INT NOT NULL,
     PRIMARY KEY (id_entrenador, id_horario),
-    FOREIGN KEY (id_entrenador) REFERENCES usuarios (CI),
+    FOREIGN KEY (id_entrenador) REFERENCES entrenador (id_entrenador),
     FOREIGN KEY (id_horario) REFERENCES horarios (id_horario)
 );
 
@@ -159,3 +166,10 @@ CREATE TABLE cliente_pago (
     FOREIGN KEY (id_pago) REFERENCES pagos (id_pago),
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente)
 );
+
+
+insert into usuarios (CI, contrasena, id_rol) values 
+(12345678, 'admin', 2);
+
+
+

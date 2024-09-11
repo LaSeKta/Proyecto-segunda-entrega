@@ -34,7 +34,7 @@ try {
                                 // Redirigir a la página según el rol
                                 $homePages = [
                                     0 => '../usuario_cliente/formulario.html',
-                                    1 => 'home2.html',
+                                    1 => '../usuario_cliente/index.html',
                                     2 => 'home3.html',
                                     3 => 'home4.html',
                                     4 => 'home5.html',

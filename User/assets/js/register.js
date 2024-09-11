@@ -26,7 +26,8 @@ $(document).ready(function () {
         // Manejo del JSON parseado correctamente
         if (data.status === 'success') {
           alert(data.message); // Muestra mensaje de éxito con alert
-          $(".modal").modal("hide"); // Cierra cualquier modal abierto
+          $(".modal").modal("hide");
+          window.location.href = 'login.html'; 
         } else {
           alert(data.message); // Muestra mensaje de error con alert
         }

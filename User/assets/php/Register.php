@@ -1,4 +1,4 @@
-<?php
+<?php 
 include '../../../assets/database.php'; // Asegúrate de que este archivo define correctamente $conn
 
 header('Content-Type: application/json');
@@ -20,39 +20,34 @@ try {
                         $stmt->bind_param("ssi", $ci, $password, $id_rol);
 
                         if ($stmt->execute()) {
-                            // Inserciones adicionales en las otras tablas
+                            // Inserciones adicionales en las tablas personas y clientes
                             $personasStmt = $conn->prepare("INSERT INTO personas (id_persona) VALUES (?)");
                             $clientesStmt = $conn->prepare("INSERT INTO clientes (id_cliente, alertas, motivo_inscripcion) VALUES (?, 0, '')");
-                            $entrenadoresStmt = $conn->prepare("INSERT INTO entrenador (id_entrenador) VALUES (?)"); // Asegúrate de que esta tabla exista
 
-                            if ($personasStmt && $clientesStmt && $entrenadoresStmt) {
-                                // Insertar el CI en las tablas personas, clientes y entrenadores
+                            if ($personasStmt && $clientesStmt) {
+                                // Insertar el CI en las tablas personas y clientes
                                 $personasStmt->bind_param("s", $ci);
                                 $clientesStmt->bind_param("s", $ci);
-                                $entrenadoresStmt->bind_param("s", $ci);
 
                                 // Ejecutar las inserciones
                                 $personasInsert = $personasStmt->execute();
                                 $clientesInsert = $clientesStmt->execute();
-                                $entrenadoresInsert = $entrenadoresStmt->execute();
 
                                 // Verificar que todas las inserciones fueron exitosas
-                                if ($personasInsert && $clientesInsert && $entrenadoresInsert) {
+                                if ($personasInsert && $clientesInsert) {
                                     echo json_encode(['status' => 'success', 'message' => 'Usuario registrado correctamente en todas las tablas']);
                                 } else {
                                     $errorMsg = "Error al registrar en tablas adicionales: ";
                                     $errorMsg .= $personasInsert ? "" : "personas ";
                                     $errorMsg .= $clientesInsert ? "" : "clientes ";
-                                    $errorMsg .= $entrenadoresInsert ? "" : "entrenadores ";
                                     echo json_encode(['status' => 'error', 'message' => $errorMsg]);
                                 }
 
                                 // Cerrar los statements
                                 $personasStmt->close();
                                 $clientesStmt->close();
-                                $entrenadoresStmt->close();
                             } else {
-                                echo json_encode(['status' => 'error', 'message' => 'Error al preparar las consultas para las tablas personas, clientes o entrenadores: ' . $conn->error]);
+                                echo json_encode(['status' => 'error', 'message' => 'Error al preparar las consultas para las tablas personas o clientes: ' . $conn->error]);
                             }
                         } else {
                             // Mostrar el error específico de la ejecución del statement

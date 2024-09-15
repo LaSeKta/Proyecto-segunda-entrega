@@ -22,13 +22,13 @@ CREATE TABLE entrenador (
     id_entrenador VARCHAR(10) NOT NULL,
     PRIMARY KEY (id_entrenador),
     FOREIGN KEY (id_entrenador) REFERENCES personas (id_persona)
-
 );
 
 CREATE TABLE clientes (
     id_cliente VARCHAR(10) NOT NULL,
     alertas INT NOT NULL,
-    motivo_inscripcion VARCHAR(255) NOT NULL,
+    user_estado INT NOT NULL,
+    motivo_inscripcion VARCHAR( 255) NOT NULL,
     PRIMARY KEY (id_cliente),
     FOREIGN KEY (id_cliente) REFERENCES usuarios (CI)
 );
@@ -69,6 +69,14 @@ CREATE TABLE ejercicios (
     nombre VARCHAR(100) NOT NULL,
     descripcion VARCHAR(255) NOT NULL,
     PRIMARY KEY (id_ejercicio)
+);
+
+CREATE TABLE contiene (
+    id_plan INT NOT NULL,
+    id_ejercicio INT NOT NULL,
+    PRIMARY KEY (id_plan, id_ejercicio),
+    FOREIGN KEY (id_plan) REFERENCES planes (id_plan),
+    FOREIGN KEY (id_ejercicio) REFERENCES ejercicios (id_ejercicio)
 );
 
 CREATE TABLE sesiones (
@@ -142,6 +150,16 @@ CREATE TABLE entrenador_horario (
     FOREIGN KEY (id_horario) REFERENCES horarios (id_horario)
 );
 
+CREATE TABLE entrenador_crea (
+    id_entrenador VARCHAR(10) NOT NULL,
+    id_plan INT NOT NULL,
+    id_ejercicio INT NOT NULL,
+    PRIMARY KEY (id_entrenador, id_plan, id_ejercicio),
+    FOREIGN KEY (id_entrenador) REFERENCES entrenador (id_entrenador),
+    FOREIGN KEY (id_plan) REFERENCES contiene (id_plan),
+    FOREIGN KEY (id_ejercicio) REFERENCES contiene (id_ejercicio)
+);
+
 CREATE TABLE sucursal_horario (
     id_sucursal INT NOT NULL,
     id_horario INT NOT NULL,
@@ -167,9 +185,5 @@ CREATE TABLE cliente_pago (
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente)
 );
 
-
-insert into usuarios (CI, contrasena, id_rol) values 
-(12345678, 'admin', 2);
-
-
-
+insert into usuarios (CI, contrasena, id_rol) values    
+(99999999, '$2y$10$nDU.z2lxToX.csqMO2BViuBgvShS5/A2A/k5Hos64ywiNa8QIivDq', 10);

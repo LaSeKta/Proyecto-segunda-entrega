@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     cargarEjercicios();
 });
 
-// Función para cargar los ejercicios en la lista
-function cargarEjercicios() {
-    const listaEjercicios = document.getElementById('ejercicios-list');
+// Función para cargar los ejercicios en la listafunction cargarEjercicios() {
+const listaEjercicios = document.getElementById('ejercicios-list');
+if (listaEjercicios) {
     listaEjercicios.innerHTML = ''; // Limpiar la lista antes de agregar los ejercicios
 
     ejercicios.forEach(ejercicio => {
@@ -21,7 +21,10 @@ function cargarEjercicios() {
         li.addEventListener('click', () => cargarFormulario(ejercicio));
         listaEjercicios.appendChild(li);
     });
+} else {
+    console.error('Elemento con ID "ejercicios-list" no encontrado.');
 }
+
 
 // Función para cargar el formulario con la información de un ejercicio existente
 function cargarFormulario(ejercicio) {

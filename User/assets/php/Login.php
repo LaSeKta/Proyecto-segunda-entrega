@@ -38,7 +38,12 @@ try {
                                     2 => 'home3.html',
                                     3 => 'home4.html',
                                     4 => 'home5.html',
-                                    5 => 'home6.html'
+                                    5 => 'home5.html',
+                                    6 => 'home5.html',
+                                    7 => 'home5.html',
+                                    8 => 'home5.html',
+                                    9 => 'home5.html',
+                                    10 => '../usuario_administrador_ti/index.html'
                                 ];
 
                                 // Verificar si la URL de redirección es válida

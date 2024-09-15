@@ -1100,3 +1100,22 @@ a:hover {
 #alertas-table tbody tr:hover {
     background-color: var(--color5);
 }
+
+.user-list-container {
+    display: flex;
+    justify-content: center; /* Centra la tabla horizontalmente */
+    align-items: center; /* Centra la tabla verticalmente, si hay suficiente espacio */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    padding: 20px; /* Añade algo de espacio alrededor */
+    box-sizing: border-box; /* Incluye padding en el tamaño total */
+}
+
+.horarios-table {
+    margin: 0 auto; /* Centra la tabla dentro del contenedor */
+    border-collapse: collapse;
+    background-color: var(--color2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 80%; /* Ajusta el ancho de la tabla según sea necesario */
+}

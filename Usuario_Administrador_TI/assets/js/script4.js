@@ -68,4 +68,4 @@ document.addEventListener('DOMContentLoaded', () => {
         // Actualizar la tabla de alertas
         actualizarTablaAlertas();
     }
-});a
+});

@@ -15,10 +15,11 @@
 <body>
     <div class="contA">
         <nav>
-            <div class="imagen_logo"> 
-                <img src="assets/img/Logos/Logo_home.png" width="120em" height="120em" alt="imagen" class="container-logo">
+            <div class="imagen_logo">
+                <img src="assets/img/Logos/Logo_home.png" width="120em" height="120em" alt="imagen"
+                    class="container-logo">
             </div>
-        
+
             <div class="div-nav-1">
                 <h1>S.I.G.EN</h1>
             </div>
@@ -53,17 +54,17 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <a href="#Horarios">
-                                <img src="assets/img/img1.png" alt="Interior design 1">
+                                    <img src="assets/img/img1.png" alt="Interior design 1">
                                 </a>
                             </div>
                             <div class="carousel-item">
                                 <a href="#Gimnasios">
-                                <img src="assets/img/img2.png" alt="Interior design 2">
+                                    <img src="assets/img/img2.png" alt="Interior design 2">
                                 </a>
                             </div>
                             <div class="carousel-item">
                                 <a href="#Sobre nosotros">
-                                <img src="assets/img/img3.png" alt="Interior design 3">
+                                    <img src="assets/img/img3.png" alt="Interior design 3">
                                 </a>
                             </div>
                         </div>
@@ -83,12 +84,15 @@
                     <h2><br>S.I.G.EN</h2>
                     <p class="parrafo1"> <br> El Usuario Administrador TI es responsable de: <br>
 
-                        -Gestión de usuarios y permisos: Controla el acceso, crea y elimina usuarios, y asigna permisos específicos. <br>
-                        -Supervisión técnica: Monitorea la infraestructura técnica, gestiona bases de datos, realiza backups, y asegura la seguridad del sistema. <br>
-                        -Configuración de alertas: Establece y ajusta las condiciones para la generación de alertas en el sistema para eventos críticos y rendimiento. <br></p>
-                    
+                        -Gestión de usuarios y permisos: Controla el acceso, crea y elimina usuarios, y asigna permisos
+                        específicos. <br>
+                        -Supervisión técnica: Monitorea la infraestructura técnica, gestiona bases de datos, realiza
+                        backups, y asegura la seguridad del sistema. <br>
+                        -Configuración de alertas: Establece y ajusta las condiciones para la generación de alertas en
+                        el sistema para eventos críticos y rendimiento. <br></p>
+
                 </div>
-                
+
             </article>
         </header>
 
@@ -97,15 +101,15 @@
             <h2 class="tituloo">Gestión de Usuarios y Permisos</h2>
             <div class="horarios-container">
 
-                <div class="user-form-container">
+                <!-- <div class="user-form-container">
                     <form id="userForm" class="user-form">
                         <div class="form-group">
                             <label for="userName">Nombre:</label>
                             <input type="text" id="userName" name="userName" required>
                         </div>
                         <div class="form-group">
-                            <label for="userEmail">Email:</label>
-                            <input type="email" id="userEmail" name="userEmail" required>
+                            <label for="userCI">CI:</label>
+                            <input type="text" id="userCI" name="userCI" required>
                         </div>
                         <div class="form-group">
                             <label for="userRole">Rol:</label>
@@ -121,104 +125,102 @@
                             <button type="submit">Añadir Usuario</button>
                         </div>
                     </form>
-                </div>
-        
+                </div> -->
+
 
                 <div class="user-list-container">
                     <table class="horarios-table">
                         <thead>
                             <tr>
-                                <th class="tablajeje" colspan="5">Usuarios Actuales y Permisos </th>
-                            </tr>
-                            <tr class="tablajeje">
                                 <th>Nombre</th>
-                                <th>Email</th>
+                                <th>CI</th>
                                 <th>Rol</th>
-                                <th>Permisos Específicos</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody id="users">
-
                         </tbody>
                     </table>
                 </div>
-            </div>
-        
 
-            <div id="editModal" class="modal">
-                <div class="modal-content">
-                    <span class="close-button">&times;</span>
-                    <h3>Editar Permisos y Rol</h3>
-                    <form id="editForm">
-                        <div class="form-group">
+                <!-- Modal de edición -->
+                <!-- Modal de edición -->
+                <div id="editModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h2>Editar Usuario</h2>
+                        <form id="editForm">
                             <label for="editRole">Rol:</label>
                             <select id="editRole" name="editRole">
-                                <option value="Usuario Cliente">Usuario Cliente</option>
-                                <option value="Usuario Administrativo">Usuario Administrativo</option>
-                                <option value="Usuario Avanzado">Usuario Avanzado</option>
-                                <option value="Entrenador">Entrenador</option>
-                                <option value="Usuario Seleccionador">Usuario Seleccionador</option>
+                                <option value="0">Usuario</option>
+                                <option value="1">Usuario Cliente</option>
+                                <option value="2">Entrenador</option>
+                                <option value="3">Usuario Avanzado</option>
+                                <option value="4">Usuario Administrativo</option>
+                                <option value="5">Usuario Seleccionador</option>
                             </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="editPermissions">Permisos Específicos:</label>
-                            <input type="text" id="editPermissions" name="editPermissions" placeholder="Ingresar permisos separados por coma">
-                        </div>
-                        <div class="form-group">
-                            <button type="submit">Guardar Cambios</button>
-                        </div>
-                    </form>
+                            <div class="form-group">
+                                <button type="submit">Guardar Cambios</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
+
             </div>
         </section>
-         
+
 
         <section id="Gimnasios">
             <div class="section-title">
                 <h3 class="tituloo">Seguridad del Sistema</h3>
-                <p class="parrafo2">Garantiza la integridad y seguridad de la infraestructura técnica de tu página. <br> Realiza monitoreos constantes, gestiona bases de datos, y asegura la protección de la información con nuestras herramientas avanzadas.</p>
+                <p class="parrafo2">Garantiza la integridad y seguridad de la infraestructura técnica de tu página. <br>
+                    Realiza monitoreos constantes, gestiona bases de datos, y asegura la protección de la información
+                    con nuestras herramientas avanzadas.</p>
             </div>
-        
+
             <div class="container">
 
                 <div class="item-container">
                     <h4>Monitorear<br>Infraestructura</h4>
                     <div class="paragraphs-and-button">
-                        <p class="parrafo3">Supervisa el rendimiento y la seguridad de tu infraestructura técnica para prevenir fallos y mantener un servicio óptimo.</p>
+                        <p class="parrafo3">Supervisa el rendimiento y la seguridad de tu infraestructura técnica para
+                            prevenir fallos y mantener un servicio óptimo.</p>
                         <a class="boton2" href="#MonitorearInfraestructura">Monitorear</a>
                     </div>
                 </div>
-        
+
 
                 <div class="item-container">
                     <h4>Gestión de<br>Bases de Datos</h4>
                     <div class="paragraphs-and-button">
-                        <p class="parrafo3">Administra y optimiza tus bases de datos para un manejo eficiente de la información y mejora en los tiempos de respuesta.</p>
+                        <p class="parrafo3">Administra y optimiza tus bases de datos para un manejo eficiente de la
+                            información y mejora en los tiempos de respuesta.</p>
                         <a class="boton2" href="#GestionBasesDeDatos">Gestionar Bases de Datos</a>
                     </div>
                 </div>
-        
+
 
                 <div class="item-container">
                     <h4>Realizar<br>Backups</h4>
                     <div class="paragraphs-and-button">
-                        <p class="parrafo33">Configura y ejecuta copias de seguridad automáticas <br> para proteger tus datos críticos <br> ante cualquier eventualidad.</p>
+                        <p class="parrafo33">Configura y ejecuta copias de seguridad automáticas <br> para proteger tus
+                            datos críticos <br> ante cualquier eventualidad.</p>
                         <a class="boton23" href="#RealizarBackups">Realizar Backup</a>
                     </div>
                 </div>
-        
+
 
                 <div class="item-container">
                     <h4>Supervisar<br>Seguridad</h4>
                     <div class="paragraphs-and-button">
-                        <p class="parrafo3">Verifica y ajusta los niveles de seguridad para proteger tu sistema de accesos no autorizados y posibles amenazas.</p>
+                        <p class="parrafo3">Verifica y ajusta los niveles de seguridad para proteger tu sistema de
+                            accesos no autorizados y posibles amenazas.</p>
                         <a class="boton2" href="#SupervisarSeguridad">Supervisar Seguridad</a>
                     </div>
                 </div>
             </div>
         </section>
-        
+
 
         <section id="Sobre nosotros">
             <h2 style="color: var(--color3);">Monitoreo Técnico</h2>
@@ -234,10 +236,11 @@
                             <option value="rendimiento">Rendimiento</option>
                             <option value="disponibilidad">Disponibilidad</option>
                         </select>
-        
+
                         <label for="parametros-alerta">Parámetros:</label>
-                        <textarea id="parametros-alerta" name="parametros-alerta" placeholder="Define los parámetros de la alerta"></textarea>
-        
+                        <textarea id="parametros-alerta" name="parametros-alerta"
+                            placeholder="Define los parámetros de la alerta"></textarea>
+
                         <label for="nivel-alerta">Nivel de Alerta:</label>
                         <select id="nivel-alerta" name="nivel-alerta" required>
                             <option value="">Seleccionar nivel</option>
@@ -245,11 +248,11 @@
                             <option value="medio">Medio</option>
                             <option value="alto">Alto</option>
                         </select>
-        
+
                         <button type="submit" id="guardar-alerta-btn">Guardar Alerta</button>
                     </form>
                 </div>
-        
+
 
                 <div id="lista-alertas">
                     <h3>Alertas Creadas</h3>
@@ -269,13 +272,13 @@
                 </div>
             </div>
         </section>
-    
+
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="assets/js/script.js"></script>
         <script src="assets/js/script2.js"></script>
-        <script src="assets/js/script3.js"></script>
+        <!-- <script src="assets/js/script3.js"></script> -->
         <script src="assets/js/script4.js"></script>
 
     </div>

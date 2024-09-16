@@ -80,8 +80,8 @@
             </article>
             <article class="der-header">
 
-                <div class="texto">
-                    <h2><br>S.I.G.EN</h2>
+                <div class="textoini">
+                    <h2 class="inititulo"><br>S.I.G.EN</h2>
                     <p class="parrafo1"> <br> El Usuario Administrador TI es responsable de: <br>
 
                         -Gestión de usuarios y permisos: Controla el acceso, crea y elimina usuarios, y asigna permisos
@@ -99,35 +99,14 @@
 
         <section id="Horarios">
             <h2 class="tituloo">Gestión de Usuarios y Permisos</h2>
+
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar por nombre o CI" class="search-input">
+            </div>
             <div class="horarios-container">
+                <!-- Área de búsqueda -->
 
-                <!-- <div class="user-form-container">
-                    <form id="userForm" class="user-form">
-                        <div class="form-group">
-                            <label for="userName">Nombre:</label>
-                            <input type="text" id="userName" name="userName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="userCI">CI:</label>
-                            <input type="text" id="userCI" name="userCI" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="userRole">Rol:</label>
-                            <select id="userRole" name="userRole">
-                                <option value="Usuario Cliente">Usuario Cliente</option>
-                                <option value="Usuario Administrativo">Usuario Administrativo</option>
-                                <option value="Usuario Avanzado">Usuario Avanzado</option>
-                                <option value="Entrenador">Entrenador</option>
-                                <option value="Usuario Seleccionador">Usuario Seleccionador</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <button type="submit">Añadir Usuario</button>
-                        </div>
-                    </form>
-                </div> -->
-
-
+        
                 <div class="user-list-container">
                     <table class="horarios-table">
                         <thead>
@@ -142,8 +121,7 @@
                         </tbody>
                     </table>
                 </div>
-
-                <!-- Modal de edición -->
+                
                 <!-- Modal de edición -->
                 <div id="editModal" class="modal">
                     <div class="modal-content">
@@ -152,12 +130,12 @@
                         <form id="editForm">
                             <label for="editRole">Rol:</label>
                             <select id="editRole" name="editRole">
-                                <option value="0">Usuario</option>
-                                <option value="1">Usuario Cliente</option>
-                                <option value="2">Entrenador</option>
-                                <option value="3">Usuario Avanzado</option>
-                                <option value="4">Usuario Administrativo</option>
-                                <option value="5">Usuario Seleccionador</option>
+                                <option value="0">Usuario Cliente</option>
+                                <option value="1">Usuario Administrativo</option>
+                                <option value="2">Usuario Avanzado</option>
+                                <option value="3">Entrenador</option>
+                                <option value="4">Usuario Seleccionador</option>
+                                <option value="5">Supervisor</option>
                             </select>
                             <div class="form-group">
                                 <button type="submit">Guardar Cambios</button>
@@ -165,10 +143,8 @@
                         </form>
                     </div>
                 </div>
-
             </div>
         </section>
-
 
         <section id="Gimnasios">
             <div class="section-title">

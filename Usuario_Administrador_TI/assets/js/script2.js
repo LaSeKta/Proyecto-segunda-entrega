@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const editModal = document.getElementById('editModal');
     const closeButton = document.querySelector('.close-button');
     const editForm = document.getElementById('editForm');
+    const searchInput = document.getElementById('searchInput');
     let usersList = [];
     let currentUserID = null;
 
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         4: 'Usuario administrativo',
         5: 'usuario Seleccionador',
     };
+
 
     function getRoleName(idRol) {
         return roleMap[idRol] || 'Rol Desconocido';
@@ -35,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (Array.isArray(data)) {
                     usersList = data;
-                    renderUsersTable();
+                    renderUsersTable(usersList);
                 } else {
                     console.error('La respuesta no es un array:', data);
                     alert('Error: La respuesta del servidor no es un array.');
@@ -47,18 +49,19 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    function renderUsersTable() {
+    function renderUsersTable(list) {
         usersTable.innerHTML = '';
 
-        if (usersList.length === 0) {
+        if (list.length === 0) {
             usersTable.innerHTML = '<tr><td colspan="4">No hay usuarios disponibles.</td></tr>';
             return;
         }
 
-        usersList.forEach(user => {
+        list.forEach(user => {
+            const nombre = user.nombre ? user.nombre : 'No definido';
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${user.nombre || 'N/A'}</td>
+                <td>${nombre}</td>
                 <td>${user.ci || 'N/A'}</td>
                 <td>${getRoleName(user.id_rol)}</td>
                 <td>
@@ -107,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const user = usersList.find(user => user.ci === currentUserID);
                 if (user) {
                     user.id_rol = newRole;
-                    renderUsersTable();
+                    renderUsersTable(usersList);
                 }
                 alert(data.message);
             } else {
@@ -121,6 +124,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         editModal.style.display = 'none';
+    });
+
+    // Función para desactivar un usuario
+    window.deleteUser = function(userId) {
+        if (confirm('¿Estás seguro de que quieres desactivar este usuario?')) {
+            fetch('assets/php/deactivate_user.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: new URLSearchParams({
+                    ci: userId,
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    alert(data.message);
+                    fetchUsers(); // Volver a cargar la lista de usuarios después de desactivar
+                } else {
+                    alert(data.message);
+                    console.error('Error al desactivar el usuario:', data.message);
+                }
+            })
+            .catch(error => {
+                alert('Error al desactivar el usuario: ' + error.message);
+                console.error('Error en la solicitud:', error);
+            });
+        }
+    };
+
+    // Función para filtrar la tabla según la búsqueda
+    searchInput.addEventListener('input', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        const filteredList = usersList.filter(user => 
+            (user.nombre && user.nombre.toLowerCase().includes(searchTerm)) ||
+            (user.ci && user.ci.toLowerCase().includes(searchTerm))
+        );
+        renderUsersTable(filteredList);
     });
 
     window.addEventListener('click', (event) => {

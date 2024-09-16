@@ -1119,3 +1119,35 @@ a:hover {
     overflow: hidden;
     width: 80%; /* Ajusta el ancho de la tabla según sea necesario */
 }
+
+
+.search-container {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    background-color: var(--color2); /* Mismo fondo que las tablas */
+    padding: 15px; /* Espacio interior */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra similar a las tablas */
+    margin-bottom: 20px; /* Espacio inferior */
+    width: 70%; /* Ancho consistente con las tablas */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+.search-input {
+    width: 100%; /* Ancho completo del input */
+    padding: 10px; /* Espacio interior */ /* Borde consistente con las tablas */
+    border-radius: 5px; /* Bordes redondeados */
+    font-family: Head; /* Fuente igual que en las tablas */
+    font-size: 1em; /* Tamaño de fuente acorde */
+    color: var(--color3); /* Color de texto */
+    background-color: var(--color4); /* Fondo claro similar a las celdas de las tablas */
+    box-sizing: border-box; /* Incluye padding en el tamaño total */
+    transition: border-color 0.3s ease; /* Transición para el borde */
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); 
+}
+
+.search-input:focus {
+    border-color: var(--color3); /* Cambia el color del borde al enfocar */
+    outline: none; /* Quita el borde predeterminado al enfocar */
+}

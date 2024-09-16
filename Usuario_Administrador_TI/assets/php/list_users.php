@@ -4,40 +4,26 @@ include '../../../assets/database.php'; // Asegúrate de que este archivo define
 header('Content-Type: application/json');
 
 try {
-    // Verificar la conexión a la base de datos
-    if (!$conn) {
-        throw new Exception('Error en la conexión a la base de datos: ' . mysqli_connect_error());
-    }
-
-    // Preparar la consulta para obtener los usuarios y sus nombres desde la tabla personas
-    $query = "SELECT usuarios.ci, usuarios.id_rol, personas.nombre 
-              FROM usuarios 
-              JOIN personas ON usuarios.CI = personas.id_persona"; // JOIN entre usuarios y personas
-
+    // Consulta para obtener usuarios activos (user_estado != 2)
+    $query = "
+        SELECT u.ci, u.id_rol, p.nombre, c.user_estado 
+        FROM usuarios u
+        LEFT JOIN personas p ON u.CI = p.id_persona
+        LEFT JOIN clientes c ON u.CI = c.id_cliente
+        WHERE c.user_estado != 2"; // Filtrar solo usuarios activos
+    
     $result = $conn->query($query);
 
-    // Verificar si la consulta fue exitosa
-    if (!$result) {
-        throw new Exception('Error en la consulta SQL: ' . $conn->error);
+    if ($result) {
+        $users = [];
+        while ($row = $result->fetch_assoc()) {
+            $users[] = $row;
+        }
+        echo json_encode($users);
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Error al obtener usuarios: ' . $conn->error]);
     }
-
-    // Verificar si se obtuvieron resultados
-    if ($result->num_rows === 0) {
-        echo json_encode(['status' => 'error', 'message' => 'No se encontraron usuarios en la base de datos.']);
-        exit;
-    }
-
-    // Construir el array de usuarios
-    $users = [];
-    while ($row = $result->fetch_assoc()) {
-        $users[] = $row;
-    }
-
-    // Devolver los usuarios en formato JSON
-    echo json_encode($users);
-
 } catch (Exception $e) {
-    // Devolver el mensaje de error en formato JSON
     echo json_encode(['status' => 'error', 'message' => 'Error del servidor: ' . $e->getMessage()]);
 }
 ?>

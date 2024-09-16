@@ -1,4 +1,11 @@
-
+    const roleMap = {
+        0: 'Usuario',
+        1: 'Usuario cliente',
+        2: 'Entrenador',
+        3: 'usuario avanzado',
+        4: 'Usuario administrativo',
+        5: 'usuario Seleccionador',
+    };
 
 
 SM

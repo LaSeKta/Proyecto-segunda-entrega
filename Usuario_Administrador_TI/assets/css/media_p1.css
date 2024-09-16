@@ -13,6 +13,192 @@
         --color6: #7d9c9e;
     }
 
+    body {
+        background-color: #fffcf4!important;
+    }
+
+    #Sobre\ nosotros {
+        display: flex;
+        flex-direction: column; /* Apilar elementos verticalmente */
+        align-items: center; /* Centrar los elementos horizontalmente */
+        padding: 20px; /* Añadir padding */
+        background-color: var(--color2); /* Fondo consistente */
+        width: 100%; /* Asegurar que ocupe todo el ancho */
+        text-align: center; /* Centrar el texto */
+    }
+
+    h2 {
+        font-size: 1.8em; /* Ajustar el tamaño del título */
+        margin-bottom: 15px; /* Espacio inferior */
+        color: var(--color3); /* Color del título */
+    }
+
+    #alertas-container {
+        display: flex;
+        flex-direction: column; /* Apilar elementos verticalmente */
+        align-items: center; /* Centrar los elementos horizontalmente */
+        width: 100%; /* Ancho completo */
+        gap: 20px; /* Espacio entre los elementos */
+        padding: 10px; /* Añadir padding */
+    }
+
+    #configuracion-alertas, #lista-alertas {
+        width: 90%; /* Ajustar ancho para dispositivos móviles */
+        max-width: 500px; /* Limitar ancho máximo */
+        padding: 15px;
+        background-color: var(--color2);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px; /* Espacio inferior */
+    }
+
+    #configuracion-alertas h3, #lista-alertas h3 {
+        font-size: 1.4em; /* Ajustar tamaño de fuente */
+        margin-bottom: 10px; /* Espacio inferior */
+        color: var(--color3); /* Color de los subtítulos */
+    }
+
+    #alertas-form label, #alertas-form input, #alertas-form select, #alertas-form textarea, #alertas-form button {
+        width: 100%; /* Asegurar ancho completo */
+        margin-top: 5px; /* Espacio superior */
+        padding: 10px; /* Ajustar padding */
+        font-family: Head; /* Consistente con el estilo */
+        font-size: 1em; /* Tamaño de fuente adecuado */
+    
+        border-radius: 5px; /* Bordes redondeados */
+    }
+
+    #alertas-form button {
+        background-color: var(--color3);
+        color: var(--color4);
+        cursor: pointer;
+        font-weight: bold;
+        border: none;
+        margin-top: 10px; /* Espacio superior */
+        transition: background-color 0.3s ease;
+    }
+
+    #alertas-form button:hover {
+        background-color: var(--color5); /* Cambiar color al pasar el cursor */
+    }
+
+    #alertas-table {
+        width: 100%; /* Ancho completo */
+        border-collapse: collapse; /* Colapsar bordes */
+        margin-top: 10px; /* Espacio superior */
+    }
+
+    #alertas-table th, #alertas-table td {
+        padding: 0.625rem!important;
+        border: 1px solid var(--color1);
+        text-align: left; /* Alinear a la izquierda */
+        font-family: Head; /* Consistente con el estilo */
+        color: var(--color3); /* Color del texto */
+    }
+
+    #alertas-table th {
+        background-color: var(--color3);
+    
+    }
+
+    #alertas-table td {
+        background-color: var(--color4);
+        color: var(--color3); /* Color de las celdas */
+    }
+
+    #alertas-table tbody tr:hover {
+        background-color: var(--color5); /* Cambiar color al pasar el cursor */
+    }
+
+
+
+    #Gimnasios {
+        display: flex;
+        height: 230vh;
+        flex-direction: column; /* Apilar elementos verticalmente */
+        align-items: center; /* Centrar los elementos horizontalmente */
+        padding: 20px;
+        background-color: var(--color2); /* Fondo consistente */
+    }
+
+    .section-title {
+        text-align: center; /* Centrar el título */
+        margin-bottom: 20px; /* Espacio inferior */
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column!important; /* Apilar items verticalmente */
+        align-items: center; /* Centrar los elementos horizontalmente */
+        width: 100%; /* Ancho completo */
+        max-width: 600px; /* Limitar el ancho máximo para una mejor visualización */
+        padding: 0 20px; /* Añadir padding horizontal */
+        gap: 20px; /* Espacio entre los elementos */
+    }
+
+    .item-container {
+        width: 100%; /* Ancho completo para cada item */
+        padding: 15px;
+        background-color: var(--color3);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center; /* Centrar el contenido */
+        transition: box-shadow 0.3s, transform 0.3s;
+    }
+
+    .item-container h4 {
+        margin-top: 0;
+        margin-bottom: 10px; /* Espacio inferior para separación */
+        font-size: 1.2em; /* Ajustar tamaño de fuente */
+        color: var(--color4);
+    }
+
+    .item-container p {
+        margin: 0;
+        margin-bottom: 10px; /* Espacio inferior para separación */
+        font-size: 0.9em; /* Ajustar tamaño de fuente */
+        color: var(--color4);
+    }
+
+    .boton2, .boton23{ 
+        width: 80%!important; /* Ajustar ancho del botón */
+        font-size: 1em; /* Ajustar tamaño de fuente */
+        margin: 10px auto; /* Centrar y añadir espacio */
+        padding: 10px; /* Ajustar padding */
+        background-color: var(--color2);
+        color: var(--color1);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .boton2:hover, .boton23:hover {
+        background-color: var(--color5); /* Cambiar color al pasar el cursor */
+        color: var(--color4); /* Asegurar contraste */
+    }
+
+
+    .textoini {
+        background-color: rgba(241, 241, 241, 0.644) !important;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.753);
+    }
+
+    
+    .inititulo {
+        color: var(--color1)!important;
+    }
+
+    .contA {
+        display: block;
+    }
+
+    .izq-header {
+        display: none !important;
+    }
+
+
+
     .contA {
         display: block;
     }
@@ -52,6 +238,7 @@
     }
 
     header {
+        background-size: 165vw 100vh !important;
         width: 100vw;
         height: 200vh;
         display: flex;
@@ -61,16 +248,16 @@
     }
 
     h2 {
-        padding-top: 120%;
         font-size: -30px;
         display: block;
         font-size: 1px;
     }
 
-    p {
-        padding: 50px;
-        padding-top: 50px;
-        display: flex;
+    .parrafo1 {
+        text-align: center;
+        color: var(--color1) !important;
+        padding: 0%;
+        padding-top: 0;
     }
 
     h1 {
@@ -152,192 +339,4 @@
         margin-bottom: 10px;
     }
 
-    h3 {
-        font-size: 4em;
-        color: var(--color3);
-        margin-top: 40% !important;
-        text-align: center;
-        font-family: Titulo;
-        max-height: 30px;
-    }
-
-    .parrafo2 {
-        display: none;
-    }
-
-    .container {
-        display: none !important;
-    }
-
-    .containerB {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center;
-        align-items: center;
-        width: 100% !important;
-        margin-bottom: 10%;
-    }
-
-    .item-container {
-        text-align: center;
-        background-color: var(--color3);
-        width: 30vw !important;
-        height: 100% !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border-radius: 40px;
-        transition: box-shadow 0.3s, transform 0.3s;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-    }
-
-    .item-container h4 {
-        max-height: 30px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        font-family: Head;
-        font-size: 18px;
-    }
-
-    .parrafo3 {
-        display: none;
-    }
-
-    .item-container1 {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        margin-bottom: 10px;
-    }
-
-    .item-container2 {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        margin-top: 10px;
-    }
-
-    .boton2 {
-        width: 16vw !important;
-        min-width: 10vw !important;
-        font-size: min(3vw, 20px) !important;
-    }
-
-    .containerCD {
-        width: 100vw;
-        height: 100vh;
-        text-align: center;
-        display: flex;
-        flex-direction: column !important;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .containerC {
-        display: flex;
-        flex-direction: row !important;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 10px;
-        margin-top: 10vh !important;
-    }
-
-    .containerD {
-        transform: translateY(-40vh);
-        border: none !important;
-        margin-bottom: -30vh !important;
-    }
-
-    .item-containerB {
-        width: 30vw !important;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        margin: 0 1vw;
-    }
-
-    .container-logoB {
-        width: 50px;
-        height: 50px;
-        margin-bottom: 1vh;
-    }
-
-    .textoB {
-        text-align: center !important;
-        font-size: min(3vw, 20px) !important;
-    }
-
-    .textoB h5 {
-        margin-bottom: -6vh;
-        font-size: min(4vw, 20px) !important;
-    }
-
-    #nombre,
-    #email,
-    #ci {
-        width: 60vw !important;
-    }
-
-    .containerD label {
-        font-size: min(4vw, 20px) !important;
-    }
-
-    .boton3 {
-        width: 35vw !important;
-        font-size: min(4vw, 20px) !important;
-    }
-
-    .containerE {
-        display: flex;
-        flex-direction: column !important;
-    }
-
-    .item-containerC {
-        position: relative;
-        width: 50vw !important;
-        height: 20vh !important;
-        background-color: rgba(255, 252, 241, 0.8);
-        margin: 10px;
-        overflow: hidden;
-        cursor: pointer;
-        margin: 2vw;
-        border-radius: 40px;
-    }
-
-    #novedad1,
-    #novedad2,
-    #novedad3 {
-        background-image: none !important;
-        text-align: center center;
-    }
-
-    .parrafo5 {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-        color: white;
-        display: flex;
-        justify-content: flex-start !important;
-        opacity: 0;
-        transition: opacity 0.3s ease-in-out;
-        font-size: min(2.2vw, 20px) !important;
-    }
-
-    .parrafo6 {
-        position: absolute;
-        width: 100%;
-        height: 100% !important;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-    }
-}
+} 

@@ -4,15 +4,15 @@ let ejercicios = [
     { id: 2, nombre: 'Flexión', tipo: 'Resistencia', descripcion: 'Ejercicio para pectorales y tríceps.' }
 ];
 
-// Cargar ejercicios al cargar la página
+
 document.addEventListener('DOMContentLoaded', () => {
     cargarEjercicios();
 });
 
-// Función para cargar los ejercicios en la listafunction cargarEjercicios() {
+
 const listaEjercicios = document.getElementById('ejercicios-list');
 if (listaEjercicios) {
-    listaEjercicios.innerHTML = ''; // Limpiar la lista antes de agregar los ejercicios
+    listaEjercicios.innerHTML = ''; 
 
     ejercicios.forEach(ejercicio => {
         const li = document.createElement('li');
@@ -26,15 +26,14 @@ if (listaEjercicios) {
 }
 
 
-// Función para cargar el formulario con la información de un ejercicio existente
+
 function cargarFormulario(ejercicio) {
     document.getElementById('nombre-ejercicio').value = ejercicio.nombre;
     document.getElementById('tipo-ejercicio').value = ejercicio.tipo;
     document.getElementById('descripcion-ejercicio').value = ejercicio.descripcion;
-    document.getElementById('agregar-ejercicio-btn').dataset.id = ejercicio.id; // Asignar el ID al botón de agregar
+    document.getElementById('agregar-ejercicio-btn').dataset.id = ejercicio.id; 
 }
 
-// Evento de agregar o modificar un ejercicio
 document.getElementById('ejercicio-form').addEventListener('submit', (e) => {
     e.preventDefault();
     const id = document.getElementById('agregar-ejercicio-btn').dataset.id;
@@ -43,34 +42,34 @@ document.getElementById('ejercicio-form').addEventListener('submit', (e) => {
     const descripcion = document.getElementById('descripcion-ejercicio').value;
 
     if (id) {
-        // Modificar ejercicio existente
+       
         const ejercicio = ejercicios.find(e => e.id == id);
         ejercicio.nombre = nombre;
         ejercicio.tipo = tipo;
         ejercicio.descripcion = descripcion;
     } else {
-        // Crear nuevo ejercicio
+        
         const nuevoEjercicio = {
-            id: Date.now(), // Generar un ID único usando la marca de tiempo
+            id: Date.now(), 
             nombre,
             tipo,
             descripcion
         };
-        ejercicios.push(nuevoEjercicio); // Agregar el nuevo ejercicio al array
+        ejercicios.push(nuevoEjercicio); 
     }
 
-    cargarEjercicios(); // Recargar la lista de ejercicios
-    e.target.reset(); // Resetear el formulario
-    delete document.getElementById('agregar-ejercicio-btn').dataset.id; // Limpiar el ID asignado al botón
+    cargarEjercicios();
+    e.target.reset(); 
+    delete document.getElementById('agregar-ejercicio-btn').dataset.id; 
 });
 
-// Evento de eliminar un ejercicio
+
 document.getElementById('eliminar-ejercicio-btn').addEventListener('click', () => {
     const id = document.getElementById('agregar-ejercicio-btn').dataset.id;
     if (id) {
-        ejercicios = ejercicios.filter(e => e.id != id); // Filtrar el ejercicio eliminado
-        cargarEjercicios(); // Recargar la lista de ejercicios
-        document.getElementById('ejercicio-form').reset(); // Resetear el formulario
-        delete document.getElementById('agregar-ejercicio-btn').dataset.id; // Limpiar el ID asignado al botón
+        ejercicios = ejercicios.filter(e => e.id != id); 
+        cargarEjercicios(); 
+        document.getElementById('ejercicio-form').reset();
+        delete document.getElementById('agregar-ejercicio-btn').dataset.id; 
     }
 });

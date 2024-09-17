@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
         editModal.style.display = 'none';
     });
 
-    // Función para desactivar un usuario
+
     window.deleteUser = function(userId) {
         if (confirm('¿Estás seguro de que quieres desactivar este usuario?')) {
             fetch('assets/php/deactivate_user.php', {
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 if (data.status === 'success') {
                     alert(data.message);
-                    fetchUsers(); // Volver a cargar la lista de usuarios después de desactivar
+                    fetchUsers(); 
                 } else {
                     alert(data.message);
                     console.error('Error al desactivar el usuario:', data.message);
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Función para filtrar la tabla según la búsqueda
+
     searchInput.addEventListener('input', () => {
         const searchTerm = searchInput.value.toLowerCase();
         const filteredList = usersList.filter(user => 

@@ -1,16 +1,16 @@
 <?php
-include '../../../assets/database.php'; // Asegúrate de que este archivo define correctamente $conn
+include '../../../assets/database.php';
 
 header('Content-Type: application/json');
 
 try {
-    // Consulta para obtener usuarios activos (user_estado != 2)
+   
     $query = "
         SELECT u.ci, u.id_rol, p.nombre, c.user_estado 
         FROM usuarios u
         LEFT JOIN personas p ON u.CI = p.id_persona
         LEFT JOIN clientes c ON u.CI = c.id_cliente
-        WHERE c.user_estado != 2"; // Filtrar solo usuarios activos
+        WHERE c.user_estado != 2"; 
     
     $result = $conn->query($query);
 

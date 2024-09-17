@@ -71,7 +71,14 @@ CREATE TABLE ejercicios (
     PRIMARY KEY (id_ejercicio)
 );
 
-CREATE TABLE contiene (
+CREATE TABLE deporte (
+    id_deporte INT NOT NULL AUTO_INCREMENT,
+    tipo VARCHAR(50) NOT NULL,
+    nombre VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id_deporte)
+)
+
+CREATE TABLE planes_ejercicios (
     id_plan INT NOT NULL,
     id_ejercicio INT NOT NULL,
     PRIMARY KEY (id_plan, id_ejercicio),
@@ -122,7 +129,7 @@ CREATE TABLE cliente_deporte (
     id_deporte INT NOT NULL,
     id_cliente VARCHAR(10) NOT NULL,
     PRIMARY KEY (id_deporte, id_cliente),
-    FOREIGN KEY (id_deporte) REFERENCES planes (id_plan),
+    FOREIGN KEY (id_deporte) REFERENCES deporte (id_deporte),
     FOREIGN KEY (id_cliente) REFERENCES clientes (id_cliente)
 );
 
@@ -168,7 +175,8 @@ CREATE TABLE sucursal_horario (
     FOREIGN KEY (id_horario) REFERENCES horarios (id_horario)
 );
 
-CREATE TABLE planes_ejercicios (
+
+CREATE TABLE contiene (
     id_plan INT NOT NULL,
     id_ejercicio INT NOT NULL,
     PRIMARY KEY (id_plan, id_ejercicio),
